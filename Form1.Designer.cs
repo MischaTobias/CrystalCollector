@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
             this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego();
+            this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,30 +41,31 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1248, 782);
+            this.panel1.Size = new System.Drawing.Size(821, 628);
             this.panel1.TabIndex = 1;
+            // 
+            // panelStatusJuego1
+            // 
+            this.panelStatusJuego1.BackColor = System.Drawing.Color.Linen;
+            this.panelStatusJuego1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStatusJuego1.Location = new System.Drawing.Point(0, 0);
+            this.panelStatusJuego1.Name = "panelStatusJuego1";
+            this.panelStatusJuego1.Size = new System.Drawing.Size(821, 123);
+            this.panelStatusJuego1.TabIndex = 1;
             // 
             // panelPreguntas1
             // 
             this.panelPreguntas1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPreguntas1.Location = new System.Drawing.Point(0, 632);
+            this.panelPreguntas1.Location = new System.Drawing.Point(0, 514);
             this.panelPreguntas1.Name = "panelPreguntas1";
-            this.panelPreguntas1.Size = new System.Drawing.Size(1248, 150);
+            this.panelPreguntas1.Size = new System.Drawing.Size(821, 114);
             this.panelPreguntas1.TabIndex = 0;
-            // 
-            // panelStatusJuego1
-            // 
-            this.panelStatusJuego1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatusJuego1.Location = new System.Drawing.Point(0, 0);
-            this.panelStatusJuego1.Name = "panelStatusJuego1";
-            this.panelStatusJuego1.Size = new System.Drawing.Size(1248, 109);
-            this.panelStatusJuego1.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 782);
+            this.ClientSize = new System.Drawing.Size(821, 628);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Crystal Collector";
