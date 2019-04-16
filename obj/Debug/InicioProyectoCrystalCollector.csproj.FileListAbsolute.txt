@@ -9,4 +9,3 @@ C:\Users\Mischa\source\repos\InicioProyectoCrystalCollector\InicioProyectoCrysta
 C:\Users\Mischa\source\repos\InicioProyectoCrystalCollector\InicioProyectoCrystalCollector\obj\Debug\InicioProyectoCrystalCollector.pdb
 C:\Users\Mischa\source\repos\InicioProyectoCrystalCollector\InicioProyectoCrystalCollector\obj\Debug\InicioProyectoCrystalCollector.PanelPreguntas.resources
 C:\Users\Mischa\source\repos\InicioProyectoCrystalCollector\InicioProyectoCrystalCollector\obj\Debug\InicioProyectoCrystalCollector.PanelStatusJuego.resources
-C:\Users\Mischa\source\repos\InicioProyectoCrystalCollector\InicioProyectoCrystalCollector\obj\Debug\InicioProyectoCrystalCollector.csprojAssemblyReference.cache

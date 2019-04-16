@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPreguntas));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Respuesta1 = new System.Windows.Forms.RadioButton();
-            this.Respuesta2 = new System.Windows.Forms.RadioButton();
             this.Respuesta3 = new System.Windows.Forms.RadioButton();
+            this.Respuesta2 = new System.Windows.Forms.RadioButton();
+            this.Respuesta1 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,16 +53,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 150);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 150);
-            this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -79,6 +69,75 @@
             this.panel3.Size = new System.Drawing.Size(560, 150);
             this.panel3.TabIndex = 1;
             // 
+            // Respuesta3
+            // 
+            this.Respuesta3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Respuesta3.AutoSize = true;
+            this.Respuesta3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Respuesta3.Location = new System.Drawing.Point(387, 107);
+            this.Respuesta3.Name = "Respuesta3";
+            this.Respuesta3.Size = new System.Drawing.Size(92, 17);
+            this.Respuesta3.TabIndex = 5;
+            this.Respuesta3.TabStop = true;
+            this.Respuesta3.Text = "Respuesta3";
+            this.Respuesta3.UseVisualStyleBackColor = true;
+            // 
+            // Respuesta2
+            // 
+            this.Respuesta2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Respuesta2.AutoSize = true;
+            this.Respuesta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Respuesta2.Location = new System.Drawing.Point(201, 107);
+            this.Respuesta2.Name = "Respuesta2";
+            this.Respuesta2.Size = new System.Drawing.Size(92, 17);
+            this.Respuesta2.TabIndex = 4;
+            this.Respuesta2.TabStop = true;
+            this.Respuesta2.Text = "Respuesta2";
+            this.Respuesta2.UseVisualStyleBackColor = true;
+            // 
+            // Respuesta1
+            // 
+            this.Respuesta1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Respuesta1.AutoSize = true;
+            this.Respuesta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Respuesta1.Location = new System.Drawing.Point(26, 107);
+            this.Respuesta1.Name = "Respuesta1";
+            this.Respuesta1.Size = new System.Drawing.Size(92, 17);
+            this.Respuesta1.TabIndex = 3;
+            this.Respuesta1.TabStop = true;
+            this.Respuesta1.Text = "Respuesta1";
+            this.Respuesta1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(98, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Aquí van las preguntas :D";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TROLL:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 150);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,62 +150,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TROLL:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Aquí van las preguntas :D";
-            // 
-            // Respuesta1
-            // 
-            this.Respuesta1.AutoSize = true;
-            this.Respuesta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Respuesta1.Location = new System.Drawing.Point(26, 107);
-            this.Respuesta1.Name = "Respuesta1";
-            this.Respuesta1.Size = new System.Drawing.Size(92, 17);
-            this.Respuesta1.TabIndex = 3;
-            this.Respuesta1.TabStop = true;
-            this.Respuesta1.Text = "Respuesta1";
-            this.Respuesta1.UseVisualStyleBackColor = true;
-            // 
-            // Respuesta2
-            // 
-            this.Respuesta2.AutoSize = true;
-            this.Respuesta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Respuesta2.Location = new System.Drawing.Point(201, 107);
-            this.Respuesta2.Name = "Respuesta2";
-            this.Respuesta2.Size = new System.Drawing.Size(92, 17);
-            this.Respuesta2.TabIndex = 4;
-            this.Respuesta2.TabStop = true;
-            this.Respuesta2.Text = "Respuesta2";
-            this.Respuesta2.UseVisualStyleBackColor = true;
-            // 
-            // Respuesta3
-            // 
-            this.Respuesta3.AutoSize = true;
-            this.Respuesta3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Respuesta3.Location = new System.Drawing.Point(387, 107);
-            this.Respuesta3.Name = "Respuesta3";
-            this.Respuesta3.Size = new System.Drawing.Size(92, 17);
-            this.Respuesta3.TabIndex = 5;
-            this.Respuesta3.TabStop = true;
-            this.Respuesta3.Text = "Respuesta3";
-            this.Respuesta3.UseVisualStyleBackColor = true;
-            // 
             // PanelPreguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,9 +160,9 @@
             this.Load += new System.EventHandler(this.PanelPreguntas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

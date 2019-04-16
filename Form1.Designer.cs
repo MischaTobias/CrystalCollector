@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
             this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego();
+            this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,21 +44,22 @@
             this.panel1.Size = new System.Drawing.Size(1248, 782);
             this.panel1.TabIndex = 1;
             // 
-            // panelPreguntas1
-            // 
-            this.panelPreguntas1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPreguntas1.Location = new System.Drawing.Point(0, 632);
-            this.panelPreguntas1.Name = "panelPreguntas1";
-            this.panelPreguntas1.Size = new System.Drawing.Size(1248, 150);
-            this.panelPreguntas1.TabIndex = 0;
-            // 
             // panelStatusJuego1
             // 
+            this.panelStatusJuego1.BackColor = System.Drawing.Color.Linen;
             this.panelStatusJuego1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelStatusJuego1.Location = new System.Drawing.Point(0, 0);
             this.panelStatusJuego1.Name = "panelStatusJuego1";
-            this.panelStatusJuego1.Size = new System.Drawing.Size(1248, 109);
+            this.panelStatusJuego1.Size = new System.Drawing.Size(1248, 123);
             this.panelStatusJuego1.TabIndex = 1;
+            // 
+            // panelPreguntas1
+            // 
+            this.panelPreguntas1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelPreguntas1.Location = new System.Drawing.Point(0, 668);
+            this.panelPreguntas1.Name = "panelPreguntas1";
+            this.panelPreguntas1.Size = new System.Drawing.Size(1248, 114);
+            this.panelPreguntas1.TabIndex = 0;
             // 
             // Form1
             // 
