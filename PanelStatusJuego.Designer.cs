@@ -32,10 +32,10 @@
             this.PanelAvatar = new System.Windows.Forms.Panel();
             this.PictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.TimePanel = new System.Windows.Forms.Panel();
+            this.LabelTimerSecs = new System.Windows.Forms.Label();
             this.PictureBoxTimer = new System.Windows.Forms.PictureBox();
             this.PanelPauseButton = new System.Windows.Forms.Panel();
             this.PanelGems = new System.Windows.Forms.Panel();
-            this.LabelTimerSecs = new System.Windows.Forms.Label();
             this.PanelAvatar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAvatar)).BeginInit();
             this.TimePanel.SuspendLayout();
@@ -44,6 +44,7 @@
             // 
             // PanelAvatar
             // 
+            this.PanelAvatar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PanelAvatar.Controls.Add(this.PictureBoxAvatar);
             this.PanelAvatar.Location = new System.Drawing.Point(0, 0);
             this.PanelAvatar.Name = "PanelAvatar";
@@ -60,6 +61,7 @@
             this.PictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxAvatar.TabIndex = 0;
             this.PictureBoxAvatar.TabStop = false;
+            this.PictureBoxAvatar.Click += new System.EventHandler(this.PictureBoxAvatar_Click);
             // 
             // TimePanel
             // 
@@ -72,6 +74,19 @@
             this.TimePanel.Name = "TimePanel";
             this.TimePanel.Size = new System.Drawing.Size(274, 123);
             this.TimePanel.TabIndex = 1;
+            // 
+            // LabelTimerSecs
+            // 
+            this.LabelTimerSecs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelTimerSecs.AutoSize = true;
+            this.LabelTimerSecs.BackColor = System.Drawing.Color.Transparent;
+            this.LabelTimerSecs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTimerSecs.Location = new System.Drawing.Point(81, 47);
+            this.LabelTimerSecs.Name = "LabelTimerSecs";
+            this.LabelTimerSecs.Size = new System.Drawing.Size(110, 24);
+            this.LabelTimerSecs.TabIndex = 1;
+            this.LabelTimerSecs.Text = "TimerSecs";
+            this.LabelTimerSecs.Click += new System.EventHandler(this.label1_Click);
             // 
             // PictureBoxTimer
             // 
@@ -101,19 +116,6 @@
             this.PanelGems.Name = "PanelGems";
             this.PanelGems.Size = new System.Drawing.Size(227, 123);
             this.PanelGems.TabIndex = 3;
-            // 
-            // LabelTimerSecs
-            // 
-            this.LabelTimerSecs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelTimerSecs.AutoSize = true;
-            this.LabelTimerSecs.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTimerSecs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTimerSecs.Location = new System.Drawing.Point(81, 47);
-            this.LabelTimerSecs.Name = "LabelTimerSecs";
-            this.LabelTimerSecs.Size = new System.Drawing.Size(110, 24);
-            this.LabelTimerSecs.TabIndex = 1;
-            this.LabelTimerSecs.Text = "TimerSecs";
-            this.LabelTimerSecs.Click += new System.EventHandler(this.label1_Click);
             // 
             // PanelStatusJuego
             // 

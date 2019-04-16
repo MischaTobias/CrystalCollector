@@ -26,5 +26,10 @@ namespace InicioProyectoCrystalCollector
         {
 
         }
+
+        private void PictureBoxAvatar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
