@@ -12,10 +12,12 @@ namespace InicioProyectoCrystalCollector
 {
     public partial class Form1 : Form
     {
-        Preguntas[] pr = new Preguntas[5];
-        PictureBox avatar = new PictureBox();
-        int fila = 0;
-        int columna = 0;
+        private Preguntas[] pr = new Preguntas[5];
+        private PictureBox troll = new PictureBox();
+        private int nivel = 2;
+        Avatar jugador = new Avatar();
+        Trolls trolljuego = new Trolls();
+        Nivel lvl = new Nivel();
 
         public Form1()
         {
@@ -26,8 +28,11 @@ namespace InicioProyectoCrystalCollector
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            jugador.GeneroAvatar(0);
             GenerarPreguntas();
-            GenerarAvatar();
+            lvl.GenerarTablero(ref TableroDeJuego, nivel);
+            lvl.GenerarAvatarRandom(ref jugador, ref TableroDeJuego, nivel);
+            lvl.GenerarTrollRandom(ref trolljuego, ref TableroDeJuego, nivel);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,83 +59,9 @@ namespace InicioProyectoCrystalCollector
             this.panelPreguntas1.AsignarPregunta(pr[num]);
         }
 
-        private void TableroDeJuego_Paint(object sender, PaintEventArgs e)
+        public void TableroDeJuego_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void BtnTablero3x3_Click(object sender, EventArgs e)
-        {
-            CambiarColumnas(3);
-            CambiarFilas(3);
-        }
-
-        private void BtnTablero4x5_Click(object sender, EventArgs e)
-        {
-            CambiarColumnas(4);
-            CambiarFilas(5);
-        }
-
-        private void BtnTablero5x6_Click(object sender, EventArgs e)
-        {
-            CambiarColumnas(5);
-            CambiarFilas(6);
-        }
-
-        private void BtnTablero6x7_Click(object sender, EventArgs e)
-        {
-            CambiarColumnas(6);
-            CambiarFilas(7);
-        }
-
-        private void BtnTablero10x10_Click(object sender, EventArgs e)
-        {
-            CambiarColumnas(10);
-            CambiarFilas(10);
-
-        }
-
-        public void CambiarFilas(int filas)
-        {
-            TableroDeJuego.SuspendLayout();
-            TableroDeJuego.RowCount = filas;
-            float height = 100 / filas;
-
-            for (int i = 0; i < filas; i++)
-            {
-                if (TableroDeJuego.RowStyles.Count <= i)
-                {
-                    TableroDeJuego.RowStyles.Add(new RowStyle(SizeType.Percent));
-                }
-                TableroDeJuego.RowStyles[i].Height = height;
-            }
-            TableroDeJuego.ResumeLayout();
-        }
-
-        public void CambiarColumnas(int columnas)
-        {
-            TableroDeJuego.SuspendLayout();
-            TableroDeJuego.ColumnCount = columnas;
-            float width = 100 / columnas;
-
-            for (int i = 0; i < columnas; i++)
-            {
-                if (TableroDeJuego.ColumnStyles.Count <= i)
-                {
-                    TableroDeJuego.ColumnStyles.Add(new ColumnStyle(SizeType.Percent));
-                }
-                TableroDeJuego.ColumnStyles[i].Width = width;
-            }
-
-            TableroDeJuego.ResumeLayout();
-        }
-
-        public void GenerarAvatar()
-        {
-            avatar.Image = global::InicioProyectoCrystalCollector.Properties.Resources.MaleWarrior;
-            avatar.Dock = DockStyle.Fill;
-            avatar.SizeMode = PictureBoxSizeMode.Zoom;
-            TableroDeJuego.Controls.Add(avatar, columna, fila);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -140,62 +71,34 @@ namespace InicioProyectoCrystalCollector
             { 
                 case Keys.Left:
                 case Keys.A:
-                    if (columna != 0)
+                    if (jugador.columnaactual != 0)
                     {
-                        MoverAvatarIzquierda();
+                        jugador.MoverAvatarIzquierda(TableroDeJuego);
                     }
                     break;
                 case Keys.Up:
                 case Keys.W:
-                    if (fila != 0)
+                    if (jugador.filaactual != 0)
                     {
-                        MoverAvatarArriba();
+                        jugador.MoverAvatarArriba(TableroDeJuego);
                     }
                     break;
                 case Keys.Right:
                 case Keys.D:
-                    if (columna < TableroDeJuego.ColumnCount-1)
+                    if (jugador.columnaactual < TableroDeJuego.ColumnCount-1)
                     {
-                        MoverAvatarDerecha();
+                        jugador.MoverAvatarDerecha(TableroDeJuego);
                     }
                     break;
                 case Keys.Down:
                 case Keys.S:
-                    if (fila < TableroDeJuego.RowCount-1)
+                    if (jugador.filaactual < TableroDeJuego.RowCount-1)
                     {
-                        MoverAvatarAbajo();
+                        jugador.MoverAvatarAbajo(TableroDeJuego);
                     }
                     break;
             }
             TableroDeJuego.ResumeLayout();
-        }
-
-        public void MoverAvatarAbajo()
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            fila++;
-            TableroDeJuego.Controls.Add(avatar, columna, fila);
-        }
-
-        public void MoverAvatarArriba()
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            fila--;
-            TableroDeJuego.Controls.Add(avatar, columna, fila);
-        }
-
-        public void MoverAvatarDerecha()
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            columna++;
-            TableroDeJuego.Controls.Add(avatar, columna, fila);
-        }
-
-        public void MoverAvatarIzquierda()
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            columna--;
-            TableroDeJuego.Controls.Add(avatar, columna, fila);
         }
     }
 }
