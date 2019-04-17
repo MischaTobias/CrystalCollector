@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPreguntas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnResponder = new System.Windows.Forms.Button();
             this.Respuesta3 = new System.Windows.Forms.RadioButton();
             this.Respuesta2 = new System.Windows.Forms.RadioButton();
             this.Respuesta1 = new System.Windows.Forms.RadioButton();
@@ -38,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnResponder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,6 +71,16 @@
             this.panel3.Size = new System.Drawing.Size(560, 150);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnResponder
+            // 
+            this.btnResponder.Location = new System.Drawing.Point(26, 102);
+            this.btnResponder.Name = "btnResponder";
+            this.btnResponder.Size = new System.Drawing.Size(127, 28);
+            this.btnResponder.TabIndex = 6;
+            this.btnResponder.Text = "Responder";
+            this.btnResponder.UseVisualStyleBackColor = true;
+            this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // Respuesta3
             // 
@@ -155,16 +165,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnResponder
-            // 
-            this.btnResponder.Location = new System.Drawing.Point(26, 102);
-            this.btnResponder.Name = "btnResponder";
-            this.btnResponder.Size = new System.Drawing.Size(127, 28);
-            this.btnResponder.TabIndex = 6;
-            this.btnResponder.Text = "Responder";
-            this.btnResponder.UseVisualStyleBackColor = true;
-            this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // PanelPreguntas
             // 
