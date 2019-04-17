@@ -43,6 +43,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(821, 628);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panelStatusJuego1
             // 
@@ -56,9 +57,9 @@
             // panelPreguntas1
             // 
             this.panelPreguntas1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPreguntas1.Location = new System.Drawing.Point(0, 514);
+            this.panelPreguntas1.Location = new System.Drawing.Point(0, 487);
             this.panelPreguntas1.Name = "panelPreguntas1";
-            this.panelPreguntas1.Size = new System.Drawing.Size(821, 114);
+            this.panelPreguntas1.Size = new System.Drawing.Size(821, 141);
             this.panelPreguntas1.TabIndex = 0;
             // 
             // Form1
