@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelStatusJuego));
             this.PanelAvatar = new System.Windows.Forms.Panel();
             this.PictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.TimePanel = new System.Windows.Forms.Panel();
@@ -54,7 +53,7 @@
             // PictureBoxAvatar
             // 
             this.PictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBoxAvatar.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxAvatar.Image")));
+            this.PictureBoxAvatar.Image = global::InicioProyectoCrystalCollector.Properties.Resources.MaleWarrior;
             this.PictureBoxAvatar.Location = new System.Drawing.Point(0, 0);
             this.PictureBoxAvatar.Name = "PictureBoxAvatar";
             this.PictureBoxAvatar.Size = new System.Drawing.Size(201, 123);
