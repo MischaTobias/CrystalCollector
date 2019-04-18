@@ -90,5 +90,17 @@ namespace InicioProyectoCrystalCollector
                 MessageBox.Show("La respuesta es incorrecta", "Advertencia");
             }
         }
+
+        public void LimpiarPanel()
+        {
+            pictureBox1.Hide();
+            panel3.Hide();
+        }
+
+        public void MostrarPanel()
+        {
+            pictureBox1.Show();
+            panel3.Show();
+        }
     }
 }

@@ -166,7 +166,7 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
-        public bool MoverAbajo()
+        public int MoverAbajo()
         {
             int res = SePuedeMover(jugador.columnaactual, jugador.filaactual + 1);
 
@@ -180,15 +180,19 @@ namespace InicioProyectoCrystalCollector
                 tablero.Controls.Remove(jugador.avatar);
                 jugador.filaactual++;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+                return 1;
             }
             else if (res == 0)
             {
-                return false;
+                //PanelPreguntasShow()
+                tablero.Controls.Remove(tablero.GetControlFromPosition(jugador.columnaactual, jugador.filaactual + 1));
+                mapa[jugador.columnaactual, jugador.filaactual + 1] = null;
+                return 0;
             }
-            return true;
+            return 2;
         }
 
-        public bool MoverArriba()
+        public int MoverArriba()
         {
             int res = SePuedeMover(jugador.columnaactual, jugador.filaactual - 1);
 
@@ -202,15 +206,18 @@ namespace InicioProyectoCrystalCollector
                 tablero.Controls.Remove(jugador.avatar);
                 jugador.filaactual--;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+                return 1;
             }
             else if (res == 0)
             {
-                return false;
+                tablero.Controls.Remove(tablero.GetControlFromPosition(jugador.columnaactual, jugador.filaactual - 1));
+                mapa[jugador.columnaactual, jugador.filaactual - 1] = null;
+                return 0;
             }
-            return true;
+            return 2;
         }
 
-        public bool MoverDerecha()
+        public int MoverDerecha()
         {
             int res = SePuedeMover(jugador.columnaactual + 1, jugador.filaactual);
 
@@ -224,15 +231,18 @@ namespace InicioProyectoCrystalCollector
                 tablero.Controls.Remove(jugador.avatar);
                 jugador.columnaactual++;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+                return 1;
             }
             else if (res == 0)
             {
-                return false;
+                tablero.Controls.Remove(tablero.GetControlFromPosition(jugador.columnaactual + 1, jugador.filaactual));
+                mapa[jugador.columnaactual + 1, jugador.filaactual] = null;
+                return 0;
             }
-            return true;
+            return 2;
         }
 
-        public bool MoverIzquierda()
+        public int MoverIzquierda()
         {
             int res = SePuedeMover(jugador.columnaactual - 1, jugador.filaactual);
 
@@ -246,18 +256,21 @@ namespace InicioProyectoCrystalCollector
                 tablero.Controls.Remove(jugador.avatar);
                 jugador.columnaactual--;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+                return 1;
             }
             else if (res == 0)
             {
-                return false;
+                tablero.Controls.Remove(tablero.GetControlFromPosition(jugador.columnaactual - 1, jugador.filaactual));
+                mapa[jugador.columnaactual - 1, jugador.filaactual] = null;
+                return 0;
             }
-            return true;
+            return 2;
         }
 
         public void RemoverGema(int x, int y)
         {
             tablero.Controls.Remove(tablero.GetControlFromPosition(x, y));
-            jugador.EstablecerPunteo(5);
+            jugador.CambiarPunteo(5);
             mapa[x, y] = null;
         }
     }
