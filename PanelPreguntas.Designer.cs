@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCambiarPregunta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panel3.Controls.Add(this.btnCambiarPregunta);
             this.panel3.Controls.Add(this.btnResponder);
             this.panel3.Controls.Add(this.Respuesta3);
             this.panel3.Controls.Add(this.Respuesta2);
@@ -166,6 +168,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnCambiarPregunta
+            // 
+            this.btnCambiarPregunta.Location = new System.Drawing.Point(410, 102);
+            this.btnCambiarPregunta.Name = "btnCambiarPregunta";
+            this.btnCambiarPregunta.Size = new System.Drawing.Size(127, 28);
+            this.btnCambiarPregunta.TabIndex = 7;
+            this.btnCambiarPregunta.Text = "Cambiar Pregunta";
+            this.btnCambiarPregunta.UseVisualStyleBackColor = true;
+            this.btnCambiarPregunta.Click += new System.EventHandler(this.btnCambiarPregunta_Click);
+            // 
             // PanelPreguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.RadioButton Respuesta2;
         private System.Windows.Forms.RadioButton Respuesta1;
         private System.Windows.Forms.Button btnResponder;
+        private System.Windows.Forms.Button btnCambiarPregunta;
     }
 }

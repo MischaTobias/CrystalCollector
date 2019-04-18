@@ -14,7 +14,9 @@ namespace InicioProyectoCrystalCollector
     {
         private Preguntas[] pr = new Preguntas[6];
         private PictureBox troll = new PictureBox();
-        private int nivel = 3;
+        private int nivel = 5;
+        private bool Freeze = false;
+        private int ContadorPreguntas = 0;
 
         Avatar jugador = new Avatar();
         Nivel lvl = new Nivel();
@@ -24,6 +26,10 @@ namespace InicioProyectoCrystalCollector
             this.KeyPreview = true;
             InitializeComponent();
             this.KeyUp += new KeyEventHandler(this.Form1_KeyDown);
+            this.panelPreguntas1.PreguntaRespondida += new PanelPreguntas.PreguntaRespondidaHandler(this.PreguntaRespondida);
+            this.panelPreguntas1.CambiarPregunta += new PanelPreguntas.CambiarPreguntaHandler(this.CambiarPregunta);
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,12 +41,12 @@ namespace InicioProyectoCrystalCollector
 
         public void VaciarPanelPreguntas()
         {
-            this.panelPreguntas1.LimpiarPanel();
+            this.panelPreguntas1.Hide();
         }
 
         public void MostrarPanelPreguntas()
         {
-            this.panelPreguntas1.MostrarPanel();
+            this.panelPreguntas1.Show();
             GenerarPreguntas();
         }
 
@@ -60,6 +66,10 @@ namespace InicioProyectoCrystalCollector
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (Freeze)
+            {
+                return;
+            }
             TableroDeJuego.SuspendLayout();
             switch (e.KeyCode)
             { 
@@ -70,7 +80,7 @@ namespace InicioProyectoCrystalCollector
                         if (lvl.MoverIzquierda() == 0)
                         {
                             MostrarPanelPreguntas();
-                            //this.panelPreguntas1.btnResponder_Click();
+                            Freeze = true;
                         }
                     }
                     break;
@@ -81,6 +91,7 @@ namespace InicioProyectoCrystalCollector
                         if (lvl.MoverArriba() == 0)
                         {
                             MostrarPanelPreguntas();
+                            Freeze = true;
                         }
                     }
                     break;
@@ -91,6 +102,7 @@ namespace InicioProyectoCrystalCollector
                         if (lvl.MoverDerecha() == 0)
                         {
                             MostrarPanelPreguntas();
+                            Freeze = true;
                         }
                     }
                     break;
@@ -101,6 +113,7 @@ namespace InicioProyectoCrystalCollector
                         if (lvl.MoverAbajo() == 0)
                         {
                             MostrarPanelPreguntas();
+                            Freeze = true;
                         }
                     }
                     break;
@@ -117,5 +130,33 @@ namespace InicioProyectoCrystalCollector
         {
             
         }
+
+        private void PreguntaRespondida(object sender, bool resultado)
+        {
+            Freeze = false;
+            VaciarPanelPreguntas();
+            ContadorPreguntas = 0;
+
+            if (resultado)
+            {
+                lvl.MoverTroll();
+            }
+        }
+
+        private void CambiarPregunta(object sender)
+        {
+            ContadorPreguntas++;
+            Random numpregunta = new Random();
+            int num = numpregunta.Next(0, 4);
+            if (ContadorPreguntas<=3)
+            {
+                this.panelPreguntas1.AsignarPregunta(pr[num]);
+            }
+            else
+            {
+                MessageBox.Show("Ya no puede cambiar su pregunta, responda.", "ADVERTENCIA");
+            }
+        }
+
     }
 }

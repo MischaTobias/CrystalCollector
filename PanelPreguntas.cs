@@ -14,6 +14,13 @@ namespace InicioProyectoCrystalCollector
     {
         Preguntas pregunta = new Preguntas();
         int seleccionrespuesta = 0;
+        bool resultado;
+
+        public delegate void PreguntaRespondidaHandler(object sender, bool result);
+        public event PreguntaRespondidaHandler PreguntaRespondida;
+
+        public delegate void CambiarPreguntaHandler(object sender);
+        public event CambiarPreguntaHandler CambiarPregunta;
 
         public PanelPreguntas()
         {
@@ -78,9 +85,9 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
-        public void btnResponder_Click(object sender, EventArgs e)
+        private void btnResponder_Click(object sender, EventArgs e)
         {
-            bool resultado = pregunta.VerificarRespuesta(seleccionrespuesta);
+            resultado = pregunta.VerificarRespuesta(seleccionrespuesta);
             if (resultado)
             {
                 MessageBox.Show("La respuesta es correcta", "Advertencia");
@@ -89,18 +96,12 @@ namespace InicioProyectoCrystalCollector
             {
                 MessageBox.Show("La respuesta es incorrecta", "Advertencia");
             }
+            this.PreguntaRespondida.Invoke(this, resultado);
         }
 
-        public void LimpiarPanel()
+        private void btnCambiarPregunta_Click(object sender, EventArgs e)
         {
-            pictureBox1.Hide();
-            panel3.Hide();
-        }
-
-        public void MostrarPanel()
-        {
-            pictureBox1.Show();
-            panel3.Show();
+            this.CambiarPregunta.Invoke(this);
         }
     }
 }

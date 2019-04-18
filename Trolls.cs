@@ -10,6 +10,7 @@ namespace InicioProyectoCrystalCollector
     class Trolls
     {
         public PictureBox troll = new PictureBox();
+        public int[] Coordenadas = new int[2];
 
         public Trolls()
         {
