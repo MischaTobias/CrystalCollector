@@ -17,7 +17,7 @@ namespace InicioProyectoCrystalCollector
         public int columnaactual;
         public int filaactual;
         private int tiempojugado;
-        private PictureBox avatar = new PictureBox();
+        public PictureBox avatar = new PictureBox();
 
         public Avatar()
         {
@@ -79,30 +79,31 @@ namespace InicioProyectoCrystalCollector
             TableroDeJuego.Controls.Add(avatar, columna, fila);
             this.columnaactual = columna;
             this.filaactual = fila;
+            
         }
 
-        public void MoverAvatarAbajo(Tablero TableroDeJuego)
+        public void MoverAvatarAbajo(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
         {
             TableroDeJuego.Controls.Remove(avatar);
             this.filaactual++;
             TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
         }
 
-        public void MoverAvatarArriba(Tablero TableroDeJuego)
+        public void MoverAvatarArriba(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
         {
             TableroDeJuego.Controls.Remove(avatar);
             this.filaactual--;
             TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
         }
 
-        public void MoverAvatarDerecha(Tablero TableroDeJuego)
+        public void MoverAvatarDerecha(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
         {
             TableroDeJuego.Controls.Remove(avatar);
             this.columnaactual++;
             TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
         }
 
-        public void MoverAvatarIzquierda(Tablero TableroDeJuego)
+        public void MoverAvatarIzquierda(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
         {
             TableroDeJuego.Controls.Remove(avatar);
             this.columnaactual--;

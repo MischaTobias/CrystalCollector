@@ -9,19 +9,18 @@ namespace InicioProyectoCrystalCollector
 {
     class Trolls
     {
-        PictureBox troll = new PictureBox();
+        public PictureBox troll = new PictureBox();
 
         public Trolls()
         {
-
+            GenerarTroll();
         }
 
-        public void GenerarTroll(Tablero TableroDeJuego, int fila, int columna)
+        public void GenerarTroll()
         {
             troll.Image = global::InicioProyectoCrystalCollector.Properties.Resources.TrollEnemy;
             troll.Dock = DockStyle.Fill;
             troll.SizeMode = PictureBoxSizeMode.Zoom;
-            TableroDeJuego.Controls.Add(troll, columna, fila);
         }
     }
 }
