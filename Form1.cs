@@ -14,12 +14,10 @@ namespace InicioProyectoCrystalCollector
     {
         private Preguntas[] pr = new Preguntas[5];
         private PictureBox troll = new PictureBox();
-        private int nivel = 5;
+        private int nivel = 3;
 
         Avatar jugador = new Avatar();
-        Trolls trolljuego = new Trolls();
         Nivel lvl = new Nivel();
-        public string[,] objetos = new string[1,1];
 
         public Form1()
         {
@@ -33,16 +31,6 @@ namespace InicioProyectoCrystalCollector
             jugador.GeneroAvatar(0);
             GenerarPreguntas();
             lvl = new Nivel(nivel, TableroDeJuego, jugador);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void GenerarPreguntas()
@@ -59,11 +47,6 @@ namespace InicioProyectoCrystalCollector
             this.panelPreguntas1.AsignarPregunta(pr[num]);
         }
 
-        public void TableroDeJuego_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             TableroDeJuego.SuspendLayout();
@@ -73,28 +56,28 @@ namespace InicioProyectoCrystalCollector
                 case Keys.A:
                     if (jugador.columnaactual != 0)
                     {
-                        jugador.MoverAvatarIzquierda(TableroDeJuego, ref objetos, jugador.filaactual, jugador.columnaactual);
+                        lvl.MoverIzquierda();
                     }
                     break;
                 case Keys.Up:
                 case Keys.W:
                     if (jugador.filaactual != 0)
                     {
-                        jugador.MoverAvatarArriba(TableroDeJuego, ref objetos, jugador.filaactual, jugador.columnaactual);
+                        lvl.MoverArriba();
                     }
                     break;
                 case Keys.Right:
                 case Keys.D:
                     if (jugador.columnaactual < TableroDeJuego.ColumnCount-1)
                     {
-                        jugador.MoverAvatarDerecha(TableroDeJuego, ref objetos, jugador.filaactual, jugador.columnaactual);
+                        lvl.MoverDerecha();
                     }
                     break;
                 case Keys.Down:
                 case Keys.S:
                     if (jugador.filaactual < TableroDeJuego.RowCount-1)
                     {
-                        jugador.MoverAvatarAbajo(TableroDeJuego, ref objetos, jugador.filaactual, jugador.columnaactual);
+                        lvl.MoverAbajo();
                     }
                     break;
             }

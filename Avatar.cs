@@ -81,33 +81,5 @@ namespace InicioProyectoCrystalCollector
             this.filaactual = fila;
             
         }
-
-        public void MoverAvatarAbajo(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            this.filaactual++;
-            TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
-        }
-
-        public void MoverAvatarArriba(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            this.filaactual--;
-            TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
-        }
-
-        public void MoverAvatarDerecha(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            this.columnaactual++;
-            TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
-        }
-
-        public void MoverAvatarIzquierda(Tablero TableroDeJuego, ref string[,] objetos, int fila, int columna)
-        {
-            TableroDeJuego.Controls.Remove(avatar);
-            this.columnaactual--;
-            TableroDeJuego.Controls.Add(avatar, this.columnaactual, this.filaactual);
-        }
     }
 }

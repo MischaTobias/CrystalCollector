@@ -79,6 +79,8 @@ namespace InicioProyectoCrystalCollector
             }
             this.tablero.Controls.Add(this.jugador.avatar, posX, posY);
             mapa[posX, posY] = "Avatar";
+            jugador.columnaactual = posX;
+            jugador.filaactual = posY;
         }
 
         public void GenerarTrolls()
@@ -142,6 +144,121 @@ namespace InicioProyectoCrystalCollector
 
             mapa[posX, posY] = "Gema";
             tablero.Controls.Add(gema.gema, posX, posY);
+        }
+
+        public int SePuedeMover(int x, int y)
+        {
+            if (x < 0 || x > tablero.RowCount || y < 0 || y > tablero.ColumnCount)
+            {
+                return -1;
+            }
+            else if (mapa[x,y] == "Troll")
+            {
+                return 0;
+            }
+            else if (mapa[x,y] == "Gema")
+            {
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+        public bool MoverAbajo()
+        {
+            int res = SePuedeMover(jugador.columnaactual, jugador.filaactual + 1);
+
+            if (res == 2)
+            {
+                RemoverGema(jugador.columnaactual, jugador.filaactual + 1);
+            }
+
+            if (res > 0)
+            {
+                tablero.Controls.Remove(jugador.avatar);
+                jugador.filaactual++;
+                tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+            }
+            else if (res == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool MoverArriba()
+        {
+            int res = SePuedeMover(jugador.columnaactual, jugador.filaactual - 1);
+
+            if (res == 2)
+            {
+                RemoverGema(jugador.columnaactual, jugador.filaactual - 1);
+            }
+
+            if (res > 0)
+            {
+                tablero.Controls.Remove(jugador.avatar);
+                jugador.filaactual--;
+                tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+            }
+            else if (res == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool MoverDerecha()
+        {
+            int res = SePuedeMover(jugador.columnaactual + 1, jugador.filaactual);
+
+            if (res == 2)
+            {
+                RemoverGema(jugador.columnaactual + 1, jugador.filaactual);
+            }
+
+            if (res > 0)
+            {
+                tablero.Controls.Remove(jugador.avatar);
+                jugador.columnaactual++;
+                tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+            }
+            else if (res == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool MoverIzquierda()
+        {
+            int res = SePuedeMover(jugador.columnaactual - 1, jugador.filaactual);
+
+            if (res == 2)
+            {
+                RemoverGema(jugador.columnaactual - 1, jugador.filaactual);
+            }
+
+            if (res > 0)
+            {
+                tablero.Controls.Remove(jugador.avatar);
+                jugador.columnaactual--;
+                tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
+            }
+            else if (res == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void RemoverGema(int x, int y)
+        {
+            tablero.Controls.Remove(tablero.GetControlFromPosition(x, y));
+            jugador.EstablecerPunteo(5);
+            mapa[x, y] = null;
         }
     }
 }

@@ -46,7 +46,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(821, 628);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // TableroDeJuego
             // 
@@ -67,7 +66,6 @@
             this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.TableroDeJuego.Size = new System.Drawing.Size(727, 304);
             this.TableroDeJuego.TabIndex = 2;
-            this.TableroDeJuego.Paint += new System.Windows.Forms.PaintEventHandler(this.TableroDeJuego_Paint);
             // 
             // panelStatusJuego1
             // 
