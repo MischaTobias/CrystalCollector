@@ -34,7 +34,7 @@ namespace InicioProyectoCrystalCollector
             this.genero = genero;
         }
 
-        public void EstablecerPunteo(int puntos)
+        public void CambiarPunteo(int puntos)
         {
             this.punteo += puntos;
         }

@@ -78,7 +78,7 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
-        private void btnResponder_Click(object sender, EventArgs e)
+        public void btnResponder_Click(object sender, EventArgs e)
         {
             bool resultado = pregunta.VerificarRespuesta(seleccionrespuesta);
             if (resultado)
