@@ -9,7 +9,7 @@ namespace InicioProyectoCrystalCollector
     class Nivel
     {
         // Generaremos los numeros aleatorios
-        Random x = new Random(50);
+        Random x = new Random();
 
         // Incluimos los elementos del nivel
         Trolls[] trolls = new Trolls[2];
@@ -87,20 +87,24 @@ namespace InicioProyectoCrystalCollector
         public void GenerarTrolls()
         {
             int cantidad = (dificultad - 2) * 2 + 2;
-            switch (dificultad)
+            if (cantidad > 0)
             {
-                case 1:
-                    break;
-                default:
-                    trolls = new Trolls[cantidad];
-                    break;
-            }
+                switch (dificultad)
+                {
+                    case 1:
+                        break;
+                    default:
+                        trolls = new Trolls[cantidad];
+                        break;
+                }
 
-            for (int i = 0; i < trolls.Length; i++)
-            {
-                Trolls newTroll = new Trolls();
-                trolls[i] = newTroll;
-                PosicionTroll(newTroll);
+
+                for (int i = 0; i < trolls.Length; i++)
+                {
+                    Trolls newTroll = new Trolls();
+                    trolls[i] = newTroll;
+                    PosicionTroll(newTroll);
+                }
             }
         }
 
@@ -138,12 +142,24 @@ namespace InicioProyectoCrystalCollector
         {
             int posX, posY;
 
-            do
+            if (dificultad == 1)
             {
-                posX = x.Next(0, tablero.RowCount - 1);
-                posY = x.Next(0, tablero.ColumnCount - 1);
+                do
+                {
+                    posX = x.Next(0, tablero.RowCount);
+                    posY = x.Next(0, tablero.ColumnCount);
+                }
+                while (mapa[posX, posY] != null);
             }
-            while (mapa[posX, posY] != null);
+            else
+            {
+                do
+                {
+                    posX = x.Next(0, tablero.RowCount - 1);
+                    posY = x.Next(0, tablero.ColumnCount - 1);
+                }
+                while (mapa[posX, posY] != null);
+            }
 
             mapa[posX, posY] = "Gema";
             tablero.Controls.Add(gema.gema, posX, posY);

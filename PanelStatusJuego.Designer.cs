@@ -32,6 +32,7 @@
             this.PanelAvatar = new System.Windows.Forms.Panel();
             this.PictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.TimePanel = new System.Windows.Forms.Panel();
+            this.lblPSegundos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LabelTimerSecs = new System.Windows.Forms.Label();
             this.PictureBoxTimer = new System.Windows.Forms.PictureBox();
@@ -42,7 +43,7 @@
             this.PanelGems = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblPSegundos = new System.Windows.Forms.Label();
+            this.lblSecs = new System.Windows.Forms.Label();
             this.PanelAvatar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAvatar)).BeginInit();
             this.TimePanel.SuspendLayout();
@@ -79,6 +80,7 @@
             this.TimePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimePanel.Controls.Add(this.lblSecs);
             this.TimePanel.Controls.Add(this.lblPSegundos);
             this.TimePanel.Controls.Add(this.label1);
             this.TimePanel.Controls.Add(this.LabelTimerSecs);
@@ -87,6 +89,17 @@
             this.TimePanel.Name = "TimePanel";
             this.TimePanel.Size = new System.Drawing.Size(274, 123);
             this.TimePanel.TabIndex = 1;
+            // 
+            // lblPSegundos
+            // 
+            this.lblPSegundos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPSegundos.AutoSize = true;
+            this.lblPSegundos.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPSegundos.Location = new System.Drawing.Point(95, 73);
+            this.lblPSegundos.Name = "lblPSegundos";
+            this.lblPSegundos.Size = new System.Drawing.Size(84, 16);
+            this.lblPSegundos.TabIndex = 3;
+            this.lblPSegundos.Text = "Segundos";
             // 
             // label1
             // 
@@ -109,7 +122,6 @@
             this.LabelTimerSecs.Name = "LabelTimerSecs";
             this.LabelTimerSecs.Size = new System.Drawing.Size(0, 16);
             this.LabelTimerSecs.TabIndex = 1;
-            this.LabelTimerSecs.Click += new System.EventHandler(this.label1_Click);
             // 
             // PictureBoxTimer
             // 
@@ -194,16 +206,16 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblPSegundos
+            // lblSecs
             // 
-            this.lblPSegundos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPSegundos.AutoSize = true;
-            this.lblPSegundos.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPSegundos.Location = new System.Drawing.Point(95, 73);
-            this.lblPSegundos.Name = "lblPSegundos";
-            this.lblPSegundos.Size = new System.Drawing.Size(84, 16);
-            this.lblPSegundos.TabIndex = 3;
-            this.lblPSegundos.Text = "Segundos";
+            this.lblSecs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSecs.AutoSize = true;
+            this.lblSecs.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecs.Location = new System.Drawing.Point(124, 56);
+            this.lblSecs.Name = "lblSecs";
+            this.lblSecs.Size = new System.Drawing.Size(26, 16);
+            this.lblSecs.TabIndex = 4;
+            this.lblSecs.Text = "se";
             // 
             // PanelStatusJuego
             // 
@@ -246,5 +258,6 @@
         private System.Windows.Forms.Label Num1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblPSegundos;
+        private System.Windows.Forms.Label lblSecs;
     }
 }

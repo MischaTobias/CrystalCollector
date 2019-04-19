@@ -14,7 +14,7 @@ namespace InicioProyectoCrystalCollector
     {
         private Preguntas[] pr = new Preguntas[6];
         private PictureBox troll = new PictureBox();
-        private int nivel = 5;
+        private int nivel = 1;
         private bool Freeze = false;
         private int ContadorPreguntas = 0;
         private int cantidadgemas;
@@ -145,6 +145,18 @@ namespace InicioProyectoCrystalCollector
                     }
                     break;
             }
+            if (this.panelStatusJuego1.gemasrecogidas == cantidadgemas)
+            {
+                this.SuspendLayout();
+                nivel++;
+                jugador.CambiarPunteo(20);
+                //VaciarPanelPreguntas();
+                //lvl = new Nivel(nivel, TableroDeJuego, jugador);
+                //EstablecerGemasNivel();
+                //this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
+
+                this.ResumeLayout();
+            }
             TableroDeJuego.ResumeLayout();
         }
 
@@ -161,12 +173,17 @@ namespace InicioProyectoCrystalCollector
         private void PreguntaRespondida(object sender, bool resultado)
         {
             Freeze = false;
+            this.panelStatusJuego1.EmpezarTimer();
             VaciarPanelPreguntas();
             ContadorPreguntas = 0;
 
             if (resultado)
             {
                 lvl.MoverTroll();
+            }
+            else
+            {
+                jugador.CambiarPunteo(-5);
             }
         }
 
