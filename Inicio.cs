@@ -26,5 +26,43 @@ namespace InicioProyectoCrystalCollector
         {
 
         }
+
+        private void lblSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblSalir_MouseEnter(object sender, EventArgs e)
+        {
+            lblSalir.ForeColor = Color.Gray;
+        }
+
+        private void lblSalir_MouseLeave(object sender, EventArgs e)
+        {
+            lblSalir.ForeColor = Color.Black;
+        }
+
+        private void lblAcercaDe_MouseEnter(object sender, EventArgs e)
+        {
+            lblAcercaDe.ForeColor = Color.Gray;
+        }
+
+        private void lblAcercaDe_MouseLeave(object sender, EventArgs e)
+        {
+            lblAcercaDe.ForeColor = Color.Black;
+        }
+
+        private void btnIniciarNuevaPartida_Click(object sender, EventArgs e)
+        {
+            SeleccionPersonaje seleccion = new SeleccionPersonaje();
+            seleccion.FormClosed += new FormClosedEventHandler(seleccion_FormClosed);
+            seleccion.Show();
+            this.Hide();
+        }
+
+        private void seleccion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

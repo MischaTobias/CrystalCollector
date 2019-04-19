@@ -9,14 +9,14 @@ namespace InicioProyectoCrystalCollector
 {
     class Avatar
     {
-        private int genero;
-        private string nombre;
+        public bool genero;
+        public string nombre;
         public int cantvidas = 3;
-        private int punteo;
-        private int cantgemasrecolectadas;
+        public int punteo;
+        public int cantgemasrecolectadas;
         public int columnaactual;
         public int filaactual;
-        private int tiempojugado;
+        public int tiempojugado;
         public PictureBox avatar = new PictureBox();
 
         public Avatar()
@@ -29,7 +29,7 @@ namespace InicioProyectoCrystalCollector
             this.nombre = nombre;
         }
 
-        public void SeleccionarGenero(int genero)
+        public void SeleccionarGenero(bool genero)
         {
             this.genero = genero;
         }
@@ -60,9 +60,9 @@ namespace InicioProyectoCrystalCollector
             return this.tiempojugado;
         }
 
-        public void GeneroAvatar(int genero)
+        public void GeneroAvatar(bool genero)
         {
-            if (genero == 0)
+            if (genero)
             {
                 avatar.Image = global::InicioProyectoCrystalCollector.Properties.Resources.MaleWarrior;
             }

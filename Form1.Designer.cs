@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego();
-            this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
             this.TableroDeJuego = new InicioProyectoCrystalCollector.Tablero(this.components);
+            this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego(true);
+            this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,24 +46,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(821, 628);
             this.panel1.TabIndex = 1;
-            // 
-            // panelStatusJuego1
-            // 
-            this.panelStatusJuego1.BackColor = System.Drawing.Color.Linen;
-            this.panelStatusJuego1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatusJuego1.Location = new System.Drawing.Point(0, 0);
-            this.panelStatusJuego1.Name = "panelStatusJuego1";
-            this.panelStatusJuego1.Size = new System.Drawing.Size(821, 123);
-            this.panelStatusJuego1.TabIndex = 1;
-            // 
-            // panelPreguntas1
-            // 
-            this.panelPreguntas1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPreguntas1.Location = new System.Drawing.Point(0, 487);
-            this.panelPreguntas1.Name = "panelPreguntas1";
-            this.panelPreguntas1.Size = new System.Drawing.Size(821, 141);
-            this.panelPreguntas1.TabIndex = 0;
-            this.panelPreguntas1.Load += new System.EventHandler(this.panelPreguntas1_Load);
             // 
             // TableroDeJuego
             // 
@@ -84,6 +66,24 @@
             this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.TableroDeJuego.Size = new System.Drawing.Size(727, 304);
             this.TableroDeJuego.TabIndex = 2;
+            // 
+            // panelStatusJuego1
+            // 
+            this.panelStatusJuego1.BackColor = System.Drawing.Color.Linen;
+            this.panelStatusJuego1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStatusJuego1.Location = new System.Drawing.Point(0, 0);
+            this.panelStatusJuego1.Name = "panelStatusJuego1";
+            this.panelStatusJuego1.Size = new System.Drawing.Size(821, 123);
+            this.panelStatusJuego1.TabIndex = 1;
+            // 
+            // panelPreguntas1
+            // 
+            this.panelPreguntas1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelPreguntas1.Location = new System.Drawing.Point(0, 487);
+            this.panelPreguntas1.Name = "panelPreguntas1";
+            this.panelPreguntas1.Size = new System.Drawing.Size(821, 141);
+            this.panelPreguntas1.TabIndex = 0;
+            this.panelPreguntas1.Load += new System.EventHandler(this.panelPreguntas1_Load);
             // 
             // Form1
             // 

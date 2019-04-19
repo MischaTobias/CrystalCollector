@@ -71,7 +71,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(560, 150);
             this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnCambiarPregunta
             // 
@@ -167,7 +166,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 150);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox1
             // 
@@ -179,7 +177,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // PanelPreguntas
             // 
@@ -188,7 +185,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "PanelPreguntas";
             this.Size = new System.Drawing.Size(760, 150);
-            this.Load += new System.EventHandler(this.PanelPreguntas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -32,6 +32,7 @@
             this.PanelAvatar = new System.Windows.Forms.Panel();
             this.PictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.TimePanel = new System.Windows.Forms.Panel();
+            this.lblSecs = new System.Windows.Forms.Label();
             this.lblPSegundos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LabelTimerSecs = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.PanelGems = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblSecs = new System.Windows.Forms.Label();
             this.PanelAvatar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAvatar)).BeginInit();
             this.TimePanel.SuspendLayout();
@@ -89,6 +89,17 @@
             this.TimePanel.Name = "TimePanel";
             this.TimePanel.Size = new System.Drawing.Size(274, 123);
             this.TimePanel.TabIndex = 1;
+            // 
+            // lblSecs
+            // 
+            this.lblSecs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSecs.AutoSize = true;
+            this.lblSecs.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecs.Location = new System.Drawing.Point(124, 56);
+            this.lblSecs.Name = "lblSecs";
+            this.lblSecs.Size = new System.Drawing.Size(26, 16);
+            this.lblSecs.TabIndex = 4;
+            this.lblSecs.Text = "se";
             // 
             // lblPSegundos
             // 
@@ -205,17 +216,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblSecs
-            // 
-            this.lblSecs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSecs.AutoSize = true;
-            this.lblSecs.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecs.Location = new System.Drawing.Point(124, 56);
-            this.lblSecs.Name = "lblSecs";
-            this.lblSecs.Size = new System.Drawing.Size(26, 16);
-            this.lblSecs.TabIndex = 4;
-            this.lblSecs.Text = "se";
             // 
             // PanelStatusJuego
             // 

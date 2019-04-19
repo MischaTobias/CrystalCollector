@@ -18,17 +18,24 @@ namespace InicioProyectoCrystalCollector
         private bool Freeze = false;
         private int ContadorPreguntas = 0;
         private int cantidadgemas;
+        private bool genero;
+        private string nombre;
 
         Avatar jugador = new Avatar();
         Nivel lvl = new Nivel();
 
-        public Form1()
+        public Form1(string nombre, bool genero)
         {
             this.KeyPreview = true;
             InitializeComponent();
             this.KeyUp += new KeyEventHandler(this.Form1_KeyDown);
             this.panelPreguntas1.PreguntaRespondida += new PanelPreguntas.PreguntaRespondidaHandler(this.PreguntaRespondida);
             this.panelPreguntas1.CambiarPregunta += new PanelPreguntas.CambiarPreguntaHandler(this.CambiarPregunta);
+            this.panelStatusJuego1.ActualizarDatos += new PanelStatusJuego.StatusAvatarHandler(this.ActualizarDatos);
+            this.jugador.CambiarNombre(nombre);
+            this.jugador.SeleccionarGenero(genero);
+            this.genero = genero;
+            this.nombre = nombre;
 
             this.panelStatusJuego1.EmpezarTimer();
             EstablecerGemasNivel();
@@ -37,7 +44,7 @@ namespace InicioProyectoCrystalCollector
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            jugador.GeneroAvatar(0);
+            jugador.GeneroAvatar(genero);
             VaciarPanelPreguntas();
             lvl = new Nivel(nivel, TableroDeJuego, jugador);
         }
@@ -307,6 +314,17 @@ namespace InicioProyectoCrystalCollector
             EstablecerGemasNivel();
             this.panelStatusJuego1.gemasrecogidas = 0;
             this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
+        }
+
+        private void ActualizarDatos(object sender)
+        {
+            this.panelStatusJuego1.nombre = nombre;
+            this.panelStatusJuego1.genero = genero;
+            this.panelStatusJuego1.cantvidas = jugador.cantvidas;
+            this.panelStatusJuego1.puntos = jugador.punteo;
+            this.panelStatusJuego1.x = jugador.filaactual;
+            this.panelStatusJuego1.y = jugador.columnaactual;
+            this.panelStatusJuego1.PararTimer();
         }
     }
 }
