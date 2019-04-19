@@ -109,7 +109,7 @@ namespace InicioProyectoCrystalCollector
             int cantidad = (dificultad * 2) + 2;
             gemas = new Gemas[cantidad];
 
-            for (int i = 0; i < trolls.Length; i++)
+            for (int i = 0; i < gemas.Length; i++)
             {
                 Gemas newGema = new Gemas();
                 gemas[i] = newGema;
@@ -176,6 +176,7 @@ namespace InicioProyectoCrystalCollector
             if (res == 2)
             {
                 RemoverGema(jugador.columnaactual, jugador.filaactual + 1);
+                return 2;
             }
 
             if (res > 0)
@@ -202,6 +203,7 @@ namespace InicioProyectoCrystalCollector
             if (res == 2)
             {
                 RemoverGema(jugador.columnaactual, jugador.filaactual - 1);
+                return 2;
             }
 
             if (res > 0)
@@ -227,6 +229,7 @@ namespace InicioProyectoCrystalCollector
             if (res == 2)
             {
                 RemoverGema(jugador.columnaactual + 1, jugador.filaactual);
+                return 2;
             }
 
             if (res > 0)
@@ -252,6 +255,7 @@ namespace InicioProyectoCrystalCollector
             if (res == 2)
             {
                 RemoverGema(jugador.columnaactual - 1, jugador.filaactual);
+                return 2;
             }
 
             if (res > 0)
@@ -274,7 +278,11 @@ namespace InicioProyectoCrystalCollector
         {
             tablero.Controls.Remove(tablero.GetControlFromPosition(x, y));
             jugador.CambiarPunteo(5);
-            mapa[x, y] = null;
+            tablero.Controls.Remove(jugador.avatar);
+            tablero.Controls.Add(jugador.avatar, x, y);
+            jugador.filaactual = y;
+            jugador.columnaactual = x;
+            mapa[x, y] = "Avatar";
         }
 
         public Trolls EncontrarTroll(int x, int y)

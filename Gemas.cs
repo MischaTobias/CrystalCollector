@@ -18,7 +18,7 @@ namespace InicioProyectoCrystalCollector
 
         public void GenerarGema()
         {
-            gema.Image = global::InicioProyectoCrystalCollector.Properties.Resources.CircleTime;
+            gema.Image = global::InicioProyectoCrystalCollector.Properties.Resources.Joya;
             gema.Dock = DockStyle.Fill;
             gema.SizeMode = PictureBoxSizeMode.Zoom;
         }

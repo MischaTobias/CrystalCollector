@@ -12,9 +12,15 @@ namespace InicioProyectoCrystalCollector
 {
     public partial class PanelStatusJuego : UserControl
     {
+        int tiempo;
+        int gemasrecogidas;
+
         public PanelStatusJuego()
         {
             InitializeComponent();
+            tiempo = 0;
+            gemasrecogidas = 0;
+            Num1.Text = gemasrecogidas.ToString();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -30,6 +36,33 @@ namespace InicioProyectoCrystalCollector
         private void PictureBoxAvatar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            tiempo++;
+            label1.Text = tiempo.ToString();
+        }
+
+        public void EmpezarTimer()
+        {
+            timer1.Enabled = true;
+        }
+
+        public void PararTimer()
+        {
+            timer1.Enabled = false;
+        }
+
+        public void EstablecerGemasNivel(int gemas)
+        {
+            Num2.Text = "of " + gemas;
+        }
+
+        public void AgregarGema()
+        {
+            gemasrecogidas++;
+            Num1.Text = gemasrecogidas.ToString();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace InicioProyectoCrystalCollector
         private int nivel = 5;
         private bool Freeze = false;
         private int ContadorPreguntas = 0;
+        private int cantidadgemas;
 
         Avatar jugador = new Avatar();
         Nivel lvl = new Nivel();
@@ -29,7 +30,9 @@ namespace InicioProyectoCrystalCollector
             this.panelPreguntas1.PreguntaRespondida += new PanelPreguntas.PreguntaRespondidaHandler(this.PreguntaRespondida);
             this.panelPreguntas1.CambiarPregunta += new PanelPreguntas.CambiarPreguntaHandler(this.CambiarPregunta);
 
-
+            this.panelStatusJuego1.EmpezarTimer();
+            EstablecerGemasNivel();
+            this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -77,10 +80,16 @@ namespace InicioProyectoCrystalCollector
                 case Keys.A:
                     if (jugador.columnaactual != 0)
                     {
-                        if (lvl.MoverIzquierda() == 0)
+                        switch (lvl.MoverIzquierda())
                         {
-                            MostrarPanelPreguntas();
-                            Freeze = true;
+                            case 0:
+                                MostrarPanelPreguntas();
+                                Freeze = true;
+                                this.panelStatusJuego1.PararTimer();
+                                break;
+                            case 2:
+                                this.panelStatusJuego1.AgregarGema();
+                                break;
                         }
                     }
                     break;
@@ -88,10 +97,16 @@ namespace InicioProyectoCrystalCollector
                 case Keys.W:
                     if (jugador.filaactual != 0)
                     {
-                        if (lvl.MoverArriba() == 0)
+                        switch (lvl.MoverArriba())
                         {
-                            MostrarPanelPreguntas();
-                            Freeze = true;
+                            case 0:
+                                MostrarPanelPreguntas();
+                                Freeze = true;
+                                this.panelStatusJuego1.PararTimer();
+                                break;
+                            case 2:
+                                this.panelStatusJuego1.AgregarGema();
+                                break;
                         }
                     }
                     break;
@@ -99,10 +114,16 @@ namespace InicioProyectoCrystalCollector
                 case Keys.D:
                     if (jugador.columnaactual < TableroDeJuego.ColumnCount-1)
                     {
-                        if (lvl.MoverDerecha() == 0)
+                        switch (lvl.MoverDerecha())
                         {
-                            MostrarPanelPreguntas();
-                            Freeze = true;
+                            case 0:
+                                MostrarPanelPreguntas();
+                                Freeze = true;
+                                this.panelStatusJuego1.PararTimer();
+                                break;
+                            case 2:
+                                this.panelStatusJuego1.AgregarGema();
+                                break;
                         }
                     }
                     break;
@@ -110,10 +131,16 @@ namespace InicioProyectoCrystalCollector
                 case Keys.S:
                     if (jugador.filaactual < TableroDeJuego.RowCount-1)
                     {
-                        if (lvl.MoverAbajo() == 0)
+                        switch (lvl.MoverAbajo())
                         {
-                            MostrarPanelPreguntas();
-                            Freeze = true;
+                            case 0:
+                                MostrarPanelPreguntas();
+                                Freeze = true;
+                                this.panelStatusJuego1.PararTimer();
+                                break;
+                            case 2:
+                                this.panelStatusJuego1.AgregarGema();
+                                break;
                         }
                     }
                     break;
@@ -158,5 +185,9 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
+        private void EstablecerGemasNivel()
+        {
+            cantidadgemas = (nivel * 2) + 2;
+        }
     }
 }
