@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPreguntas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCambiarPregunta = new System.Windows.Forms.Button();
@@ -77,10 +76,11 @@
             // btnCambiarPregunta
             // 
             this.btnCambiarPregunta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambiarPregunta.Enabled = false;
             this.btnCambiarPregunta.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarPregunta.Location = new System.Drawing.Point(410, 102);
+            this.btnCambiarPregunta.Location = new System.Drawing.Point(323, 102);
             this.btnCambiarPregunta.Name = "btnCambiarPregunta";
-            this.btnCambiarPregunta.Size = new System.Drawing.Size(127, 28);
+            this.btnCambiarPregunta.Size = new System.Drawing.Size(214, 28);
             this.btnCambiarPregunta.TabIndex = 7;
             this.btnCambiarPregunta.Text = "Cambiar Pregunta";
             this.btnCambiarPregunta.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::InicioProyectoCrystalCollector.Properties.Resources.TrollFace;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 150);

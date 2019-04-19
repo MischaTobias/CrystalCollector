@@ -14,12 +14,13 @@ namespace InicioProyectoCrystalCollector
         // Incluimos los elementos del nivel
         Trolls[] trolls = new Trolls[2];
         Gemas[] gemas = new Gemas[4];
+        Portal portal;
         Avatar jugador = new Avatar();
         Tablero tablero = new Tablero();
         int[] ProxPosicion = new int[2];
 
         // Hacemos un mapa del nivel
-        string[,] mapa = new string[3, 3];
+        public string[,] mapa = new string[3, 3];
 
         int dificultad = 1;
         public Nivel()
@@ -38,6 +39,7 @@ namespace InicioProyectoCrystalCollector
             this.GenerarAvatarRandom();
             this.GenerarTrolls();
             this.GenerarGemas();
+            this.GenerarPortal();
         }
 
         public void LlenarMatriz()
@@ -98,7 +100,6 @@ namespace InicioProyectoCrystalCollector
                         break;
                 }
 
-
                 for (int i = 0; i < trolls.Length; i++)
                 {
                     Trolls newTroll = new Trolls();
@@ -119,6 +120,12 @@ namespace InicioProyectoCrystalCollector
                 gemas[i] = newGema;
                 PosicionGema(newGema);
             }
+        }
+
+        public void GenerarPortal()
+        {
+            portal = new Portal();
+            PosicionPortal(portal);
         }
 
         private void PosicionTroll(Trolls troll)
@@ -165,6 +172,35 @@ namespace InicioProyectoCrystalCollector
             tablero.Controls.Add(gema.gema, posX, posY);
         }
 
+        private void PosicionPortal(Portal portal)
+        {
+            int posX, posY;
+
+            if (dificultad == 1)
+            {
+                do
+                {
+                    posX = x.Next(0, tablero.RowCount);
+                    posY = x.Next(0, tablero.ColumnCount);
+                }
+                while (mapa[posX, posY] != null);
+            }
+            else
+            {
+                do
+                {
+                    posX = x.Next(0, tablero.RowCount - 1);
+                    posY = x.Next(0, tablero.ColumnCount - 1);
+                }
+                while (mapa[posX, posY] != null);
+            }
+
+            mapa[posX, posY] = "Portal";
+            portal.Coordenadas[0] = posX;
+            portal.Coordenadas[1] = posY;
+            tablero.Controls.Add(portal.portal, posX, posY);
+        }
+
         public int SePuedeMover(int x, int y)
         {
             if (x < 0 || x > tablero.RowCount || y < 0 || y > tablero.ColumnCount)
@@ -179,7 +215,10 @@ namespace InicioProyectoCrystalCollector
             {
                 return 2;
             }
-            else
+            else if (mapa[x,y] == "Portal")
+            {
+                return 3;
+            }
             {
                 return 1;
             }
@@ -193,6 +232,13 @@ namespace InicioProyectoCrystalCollector
             {
                 RemoverGema(jugador.columnaactual, jugador.filaactual + 1);
                 return 2;
+            }
+
+            if (res == 3)
+            {
+                ProxPosicion[0] = jugador.columnaactual;
+                ProxPosicion[1] = jugador.filaactual + 1;
+                return 3;
             }
 
             if (res > 0)
@@ -222,6 +268,13 @@ namespace InicioProyectoCrystalCollector
                 return 2;
             }
 
+            if (res == 3)
+            {
+                ProxPosicion[0] = jugador.columnaactual;
+                ProxPosicion[1] = jugador.filaactual - 1;
+                return 3;
+            }
+
             if (res > 0)
             {
                 tablero.Controls.Remove(jugador.avatar);
@@ -248,6 +301,13 @@ namespace InicioProyectoCrystalCollector
                 return 2;
             }
 
+            if (res == 3)
+            {
+                ProxPosicion[0] = jugador.columnaactual + 1;
+                ProxPosicion[1] = jugador.filaactual;
+                return 3;
+            }
+
             if (res > 0)
             {
                 tablero.Controls.Remove(jugador.avatar);
@@ -272,6 +332,13 @@ namespace InicioProyectoCrystalCollector
             {
                 RemoverGema(jugador.columnaactual - 1, jugador.filaactual);
                 return 2;
+            }
+
+            if (res == 3)
+            {
+                ProxPosicion[0] = jugador.columnaactual - 1;
+                ProxPosicion[1] = jugador.filaactual;
+                return 3;
             }
 
             if (res > 0)
@@ -320,6 +387,20 @@ namespace InicioProyectoCrystalCollector
             tablero.SuspendLayout();
             tablero.Controls.Remove(tablero.GetControlFromPosition(ProxPosicion[0], ProxPosicion[1]));
             PosicionTroll(EncontrarTroll(ProxPosicion[0], ProxPosicion[1]));
+
+            tablero.Controls.Remove(jugador.avatar);
+            tablero.Controls.Add(jugador.avatar, ProxPosicion[0], ProxPosicion[1]);
+            jugador.filaactual = ProxPosicion[1];
+            jugador.columnaactual = ProxPosicion[0];
+            mapa[ProxPosicion[0], ProxPosicion[1]] = "Avatar";
+            tablero.ResumeLayout();
+        }
+
+        public void MoverPortal()
+        {
+            tablero.SuspendLayout();
+            tablero.Controls.Remove(tablero.GetControlFromPosition(ProxPosicion[0], ProxPosicion[1]));
+            PosicionPortal(portal);
 
             tablero.Controls.Remove(jugador.avatar);
             tablero.Controls.Add(jugador.avatar, ProxPosicion[0], ProxPosicion[1]);

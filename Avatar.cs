@@ -11,7 +11,7 @@ namespace InicioProyectoCrystalCollector
     {
         private int genero;
         private string nombre;
-        private int cantvidas;
+        public int cantvidas = 3;
         private int punteo;
         private int cantgemasrecolectadas;
         public int columnaactual;

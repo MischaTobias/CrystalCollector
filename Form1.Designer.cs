@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TableroDeJuego = new InicioProyectoCrystalCollector.Tablero(this.components);
             this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego();
             this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
+            this.TableroDeJuego = new InicioProyectoCrystalCollector.Tablero(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,26 +46,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(821, 628);
             this.panel1.TabIndex = 1;
-            // 
-            // TableroDeJuego
-            // 
-            this.TableroDeJuego.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableroDeJuego.BackColor = System.Drawing.Color.Silver;
-            this.TableroDeJuego.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.TableroDeJuego.ColumnCount = 3;
-            this.TableroDeJuego.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.TableroDeJuego.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.TableroDeJuego.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.TableroDeJuego.Location = new System.Drawing.Point(43, 152);
-            this.TableroDeJuego.Name = "TableroDeJuego";
-            this.TableroDeJuego.RowCount = 3;
-            this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.TableroDeJuego.Size = new System.Drawing.Size(727, 304);
-            this.TableroDeJuego.TabIndex = 2;
             // 
             // panelStatusJuego1
             // 
@@ -84,6 +64,26 @@
             this.panelPreguntas1.Size = new System.Drawing.Size(821, 141);
             this.panelPreguntas1.TabIndex = 0;
             this.panelPreguntas1.Load += new System.EventHandler(this.panelPreguntas1_Load);
+            // 
+            // TableroDeJuego
+            // 
+            this.TableroDeJuego.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableroDeJuego.BackColor = System.Drawing.Color.Silver;
+            this.TableroDeJuego.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.TableroDeJuego.ColumnCount = 3;
+            this.TableroDeJuego.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TableroDeJuego.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.TableroDeJuego.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.TableroDeJuego.Location = new System.Drawing.Point(43, 152);
+            this.TableroDeJuego.Name = "TableroDeJuego";
+            this.TableroDeJuego.RowCount = 3;
+            this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TableroDeJuego.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TableroDeJuego.Size = new System.Drawing.Size(727, 304);
+            this.TableroDeJuego.TabIndex = 2;
             // 
             // Form1
             // 

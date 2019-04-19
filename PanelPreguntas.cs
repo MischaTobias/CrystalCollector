@@ -103,5 +103,10 @@ namespace InicioProyectoCrystalCollector
         {
             this.CambiarPregunta.Invoke(this);
         }
+
+        public void CambiarDisponibilidadBtnCambiar(bool estado)
+        {
+            btnCambiarPregunta.Enabled = estado;
+        }
     }
 }

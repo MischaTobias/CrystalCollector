@@ -89,6 +89,26 @@ namespace InicioProyectoCrystalCollector
                                 break;
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
+                                this.jugador.CambiarPunteo(10);
+                                break;
+                            case 3:
+                                if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
+                                {
+                                    lvl.MoverPortal();
+                                    jugador.CambiarPunteo(-5);
+                                }
+                                else if (nivel <= 4)
+                                {
+                                    this.SuspendLayout();
+                                    CambiarNivelDeJuego(true);
+                                    this.ResumeLayout();
+                                }
+                                else
+                                {
+                                    this.panelStatusJuego1.PararTimer();
+                                    Freeze = true;
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                }
                                 break;
                         }
                     }
@@ -106,6 +126,26 @@ namespace InicioProyectoCrystalCollector
                                 break;
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
+                                this.jugador.CambiarPunteo(10);
+                                break;
+                            case 3:
+                                if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
+                                {
+                                    lvl.MoverPortal();
+                                    jugador.CambiarPunteo(-5);
+                                }
+                                else if (nivel <= 4)
+                                {
+                                    this.SuspendLayout();
+                                    CambiarNivelDeJuego(true);
+                                    this.ResumeLayout();
+                                }
+                                else
+                                {
+                                    this.panelStatusJuego1.PararTimer();
+                                    Freeze = true;
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                }
                                 break;
                         }
                     }
@@ -123,6 +163,26 @@ namespace InicioProyectoCrystalCollector
                                 break;
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
+                                this.jugador.CambiarPunteo(10);
+                                break;
+                            case 3:
+                                if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
+                                {
+                                    lvl.MoverPortal();
+                                    jugador.CambiarPunteo(-5);
+                                }
+                                else if (nivel <= 4)
+                                {
+                                    this.SuspendLayout();
+                                    CambiarNivelDeJuego(true);
+                                    this.ResumeLayout();
+                                }
+                                else
+                                {
+                                    this.panelStatusJuego1.PararTimer();
+                                    Freeze = true;
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                }
                                 break;
                         }
                     }
@@ -140,22 +200,30 @@ namespace InicioProyectoCrystalCollector
                                 break;
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
+                                this.jugador.CambiarPunteo(10);
+                                break;
+                            case 3:
+                                if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
+                                {
+                                    lvl.MoverPortal();
+                                    jugador.CambiarPunteo(-5);
+                                }
+                                else if (nivel <= 4)
+                                {
+                                    this.SuspendLayout();
+                                    CambiarNivelDeJuego(true);
+                                    this.ResumeLayout();
+                                }
+                                else
+                                {
+                                    this.panelStatusJuego1.PararTimer();
+                                    Freeze = true;
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                }
                                 break;
                         }
                     }
                     break;
-            }
-            if (this.panelStatusJuego1.gemasrecogidas == cantidadgemas)
-            {
-                this.SuspendLayout();
-                nivel++;
-                jugador.CambiarPunteo(20);
-                //VaciarPanelPreguntas();
-                //lvl = new Nivel(nivel, TableroDeJuego, jugador);
-                //EstablecerGemasNivel();
-                //this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
-
-                this.ResumeLayout();
             }
             TableroDeJuego.ResumeLayout();
         }
@@ -172,18 +240,30 @@ namespace InicioProyectoCrystalCollector
 
         private void PreguntaRespondida(object sender, bool resultado)
         {
-            Freeze = false;
-            this.panelStatusJuego1.EmpezarTimer();
-            VaciarPanelPreguntas();
-            ContadorPreguntas = 0;
-
             if (resultado)
             {
+                ContadorPreguntas = 0;
+                Freeze = false;
+                this.panelStatusJuego1.EmpezarTimer();
+                this.panelPreguntas1.CambiarDisponibilidadBtnCambiar(false);
+                this.jugador.CambiarPunteo(5);
                 lvl.MoverTroll();
+                VaciarPanelPreguntas();
             }
             else
             {
+                this.panelPreguntas1.CambiarDisponibilidadBtnCambiar(true);
                 jugador.CambiarPunteo(-5);
+                jugador.CambiarVidas(-1);
+                if (jugador.cantvidas == 0)
+                {
+                    Freeze = true;
+                    MessageBox.Show("Ha perdido todas sus vidas, el juego ha terminado", "ADVERTENCIA");
+                }
+                else if (ContadorPreguntas == 3)
+                {
+                    CambiarNivelDeJuego(false);
+                }
             }
         }
 
@@ -195,6 +275,7 @@ namespace InicioProyectoCrystalCollector
             if (ContadorPreguntas<=3)
             {
                 this.panelPreguntas1.AsignarPregunta(pr[num]);
+                this.panelPreguntas1.CambiarDisponibilidadBtnCambiar(false);
             }
             else
             {
@@ -205,6 +286,27 @@ namespace InicioProyectoCrystalCollector
         private void EstablecerGemasNivel()
         {
             cantidadgemas = (nivel * 2) + 2;
+        }
+
+        public void CambiarNivelDeJuego(bool respuesta)
+        {
+            if (respuesta)
+            {
+                nivel++;
+                jugador.CambiarPunteo(20);
+            }
+            else
+            {
+                nivel--;
+                jugador.CambiarPunteo(-20);
+            }
+
+            VaciarPanelPreguntas();
+            TableroDeJuego.Controls.Clear();
+            lvl = new Nivel(nivel, TableroDeJuego, jugador);
+            EstablecerGemasNivel();
+            this.panelStatusJuego1.gemasrecogidas = 0;
+            this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
         }
     }
 }

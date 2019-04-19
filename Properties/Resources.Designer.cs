@@ -63,6 +63,16 @@ namespace InicioProyectoCrystalCollector.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CampoBatalla {
+            get {
+                object obj = ResourceManager.GetObject("CampoBatalla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CircleTime {
             get {
                 object obj = ResourceManager.GetObject("CircleTime", resourceCulture);
@@ -93,6 +103,16 @@ namespace InicioProyectoCrystalCollector.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Joya {
+            get {
+                object obj = ResourceManager.GetObject("Joya", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_crystal {
             get {
                 object obj = ResourceManager.GetObject("logo-crystal", resourceCulture);
@@ -106,6 +126,26 @@ namespace InicioProyectoCrystalCollector.Properties {
         internal static System.Drawing.Bitmap MaleWarrior {
             get {
                 object obj = ResourceManager.GetObject("MaleWarrior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PauseButton {
+            get {
+                object obj = ResourceManager.GetObject("PauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Portal {
+            get {
+                object obj = ResourceManager.GetObject("Portal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
