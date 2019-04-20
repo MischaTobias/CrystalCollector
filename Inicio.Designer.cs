@@ -117,6 +117,7 @@
             this.DoubleBuffered = true;
             this.Name = "Inicio";
             this.Text = "Crystall Collector";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

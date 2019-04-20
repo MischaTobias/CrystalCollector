@@ -172,6 +172,59 @@ namespace InicioProyectoCrystalCollector
             tablero.Controls.Add(gema.gema, posX, posY);
         }
 
+        /*
+        private bool NoHayGema(int posX, int posY)
+        {
+            int sig1 = posX + 1;
+            int sig2 = posX - 1;
+            int sig3 = posY + 1;
+            int sig4 = posY - 1;
+
+            int res;
+            res = SePuedeMover(posX, sig3);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(posX, sig4);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(sig1, posY);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(sig1, sig3);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(sig1, sig4);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(sig2, posY);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(sig2, sig3);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            res = SePuedeMover(sig2, sig4);
+            if (res == 2 || res == -1)
+            {
+                return false;
+            }
+            return true;
+        }
+        */
+
         private void PosicionPortal(Portal portal)
         {
             int posX, posY;

@@ -12,6 +12,14 @@ namespace InicioProyectoCrystalCollector
 {
     public partial class EstadoAvatar : Form
     {
+        public delegate void CerrarStatusHandler(object sender);
+        public event CerrarStatusHandler CerrarStatus;
+
+        public EstadoAvatar()
+        {
+
+        }
+
         public EstadoAvatar(string nombre, bool genero, int cantvidas, int cantjoyas, int puntos, int x, int y, int tiempo)
         {
             InitializeComponent();
@@ -31,6 +39,13 @@ namespace InicioProyectoCrystalCollector
             this.lblPuntos.Text = "> " + puntos.ToString();
             this.lblPosicion.Text = "> (" + x.ToString() + ", " + y.ToString() + ")";
             this.lblTiempo.Text = "> " + tiempo.ToString() + " Segundos";
+            this.ControlBox = false;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            CerrarStatus.Invoke(this);
+            this.Close();
         }
     }
 }

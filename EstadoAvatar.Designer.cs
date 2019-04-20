@@ -44,6 +44,7 @@
             this.lblPosicion = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTiempo = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBPersonaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBJoyasVida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBCristalesCaja)).BeginInit();
@@ -67,6 +68,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(284, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(263, 18);
@@ -79,7 +81,7 @@
             this.lblGenero.AutoSize = true;
             this.lblGenero.BackColor = System.Drawing.Color.Transparent;
             this.lblGenero.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenero.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblGenero.ForeColor = System.Drawing.Color.DarkGray;
             this.lblGenero.Location = new System.Drawing.Point(284, 66);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(100, 16);
@@ -92,7 +94,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblNombre.ForeColor = System.Drawing.Color.DarkGray;
             this.lblNombre.Location = new System.Drawing.Point(284, 96);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(31, 16);
@@ -105,6 +107,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(284, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 18);
@@ -129,7 +132,7 @@
             this.lblVidas.AutoSize = true;
             this.lblVidas.BackColor = System.Drawing.Color.Transparent;
             this.lblVidas.Font = new System.Drawing.Font("Supercell-Magic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVidas.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblVidas.ForeColor = System.Drawing.Color.DarkGray;
             this.lblVidas.Location = new System.Drawing.Point(365, 162);
             this.lblVidas.Name = "lblVidas";
             this.lblVidas.Size = new System.Drawing.Size(37, 19);
@@ -142,6 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(284, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(397, 18);
@@ -166,7 +170,7 @@
             this.lblCristalesCaja.AutoSize = true;
             this.lblCristalesCaja.BackColor = System.Drawing.Color.Transparent;
             this.lblCristalesCaja.Font = new System.Drawing.Font("Supercell-Magic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCristalesCaja.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblCristalesCaja.ForeColor = System.Drawing.Color.DarkGray;
             this.lblCristalesCaja.Location = new System.Drawing.Point(365, 248);
             this.lblCristalesCaja.Name = "lblCristalesCaja";
             this.lblCristalesCaja.Size = new System.Drawing.Size(32, 19);
@@ -179,6 +183,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(284, 293);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 18);
@@ -191,7 +196,7 @@
             this.lblPuntos.AutoSize = true;
             this.lblPuntos.BackColor = System.Drawing.Color.Transparent;
             this.lblPuntos.Font = new System.Drawing.Font("Supercell-Magic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuntos.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblPuntos.ForeColor = System.Drawing.Color.DarkGray;
             this.lblPuntos.Location = new System.Drawing.Point(283, 324);
             this.lblPuntos.Name = "lblPuntos";
             this.lblPuntos.Size = new System.Drawing.Size(38, 24);
@@ -204,6 +209,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(284, 359);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(163, 18);
@@ -216,7 +222,7 @@
             this.lblPosicion.AutoSize = true;
             this.lblPosicion.BackColor = System.Drawing.Color.Transparent;
             this.lblPosicion.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicion.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblPosicion.ForeColor = System.Drawing.Color.DarkGray;
             this.lblPosicion.Location = new System.Drawing.Point(283, 386);
             this.lblPosicion.Name = "lblPosicion";
             this.lblPosicion.Size = new System.Drawing.Size(62, 18);
@@ -229,6 +235,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(283, 414);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(199, 18);
@@ -241,12 +248,25 @@
             this.lblTiempo.AutoSize = true;
             this.lblTiempo.BackColor = System.Drawing.Color.Transparent;
             this.lblTiempo.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblTiempo.ForeColor = System.Drawing.Color.DarkGray;
             this.lblTiempo.Location = new System.Drawing.Point(283, 442);
             this.lblTiempo.Name = "lblTiempo";
             this.lblTiempo.Size = new System.Drawing.Size(118, 18);
             this.lblTiempo.TabIndex = 16;
             this.lblTiempo.Text = "> X Segundos";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(598, 464);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 18);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Cerrar Ventana";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // EstadoAvatar
             // 
@@ -254,6 +274,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InicioProyectoCrystalCollector.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(758, 491);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblPosicion);
@@ -270,6 +291,7 @@
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pBPersonaje);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "EstadoAvatar";
             this.Text = "Estado de Avatar";
             ((System.ComponentModel.ISupportInitialize)(this.pBPersonaje)).EndInit();
@@ -298,5 +320,6 @@
         private System.Windows.Forms.Label lblPosicion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTiempo;
+        private System.Windows.Forms.Label label5;
     }
 }

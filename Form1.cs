@@ -23,6 +23,7 @@ namespace InicioProyectoCrystalCollector
 
         Avatar jugador = new Avatar();
         Nivel lvl = new Nivel();
+        Inicio inicio = new Inicio();
 
         public Form1(string nombre, bool genero)
         {
@@ -35,6 +36,8 @@ namespace InicioProyectoCrystalCollector
             this.jugador.CambiarNombre(nombre);
             this.jugador.SeleccionarGenero(genero);
             this.genero = genero;
+            DeterminarGenero();
+            this.panelStatusJuego1.SetAvatar();
             this.nombre = nombre;
 
             this.panelStatusJuego1.EmpezarTimer();
@@ -82,7 +85,7 @@ namespace InicioProyectoCrystalCollector
             }
             TableroDeJuego.SuspendLayout();
             switch (e.KeyCode)
-            { 
+            {
                 case Keys.Left:
                 case Keys.A:
                     if (jugador.columnaactual != 0)
@@ -159,7 +162,7 @@ namespace InicioProyectoCrystalCollector
                     break;
                 case Keys.Right:
                 case Keys.D:
-                    if (jugador.columnaactual < TableroDeJuego.ColumnCount-1)
+                    if (jugador.columnaactual < TableroDeJuego.ColumnCount - 1)
                     {
                         switch (lvl.MoverDerecha())
                         {
@@ -196,7 +199,7 @@ namespace InicioProyectoCrystalCollector
                     break;
                 case Keys.Down:
                 case Keys.S:
-                    if (jugador.filaactual < TableroDeJuego.RowCount-1)
+                    if (jugador.filaactual < TableroDeJuego.RowCount - 1)
                     {
                         switch (lvl.MoverAbajo())
                         {
@@ -242,7 +245,7 @@ namespace InicioProyectoCrystalCollector
 
         private void panelPreguntas1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void PreguntaRespondida(object sender, bool resultado)
@@ -279,7 +282,7 @@ namespace InicioProyectoCrystalCollector
             ContadorPreguntas++;
             Random numpregunta = new Random();
             int num = numpregunta.Next(0, 4);
-            if (ContadorPreguntas<=3)
+            if (ContadorPreguntas <= 3)
             {
                 this.panelPreguntas1.AsignarPregunta(pr[num]);
                 this.panelPreguntas1.CambiarDisponibilidadBtnCambiar(false);
@@ -325,6 +328,24 @@ namespace InicioProyectoCrystalCollector
             this.panelStatusJuego1.x = jugador.filaactual;
             this.panelStatusJuego1.y = jugador.columnaactual;
             this.panelStatusJuego1.PararTimer();
+        }
+
+        public void DeterminarGenero()
+        {
+            this.panelStatusJuego1.genero = genero;
+        }
+
+        private void btnTerminarPartida_Click(object sender, EventArgs e)
+        {
+            Inicio NuevoInicio = new Inicio();
+            NuevoInicio.FormClosed += new FormClosedEventHandler(TerminarPartida);
+            NuevoInicio.Show();
+            this.Hide();
+        }
+
+        private void TerminarPartida(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

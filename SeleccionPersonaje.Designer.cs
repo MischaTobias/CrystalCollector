@@ -124,6 +124,7 @@
             this.Controls.Add(this.pBPersonaje);
             this.Name = "SeleccionPersonaje";
             this.Text = "Crystall Collector";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pBPersonaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBCambiarPersonaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCambiarPersonajeReves)).EndInit();

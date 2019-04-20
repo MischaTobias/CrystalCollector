@@ -20,18 +20,37 @@ namespace InicioProyectoCrystalCollector
         public int cantvidas;
         public int puntos;
         public int x, y;
+        EstadoAvatar estado = new EstadoAvatar();
+        public Inicio inicio = new Inicio();
 
         public delegate void StatusAvatarHandler(object sender);
         public event StatusAvatarHandler ActualizarDatos;
 
-        public PanelStatusJuego(bool genero)
+        public delegate void TerminarPartidaHandler(object sender);
+        public event TerminarPartidaHandler TerminarPartida;
+
+
+        public PanelStatusJuego()
         {
             InitializeComponent();
             tiempo = 0;
             gemasrecogidas = 0;
             Num1.Text = gemasrecogidas.ToString();
             lblSecs.Text = "";
-            this.SuspendLayout();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CerrarStatus(object sender)
+        {
+            EmpezarTimer();
+        }
+
+        public void SetAvatar()
+        {
             if (genero)
             {
                 PictureBoxAvatar.Image = global::InicioProyectoCrystalCollector.Properties.Resources.MaleWarrior;
@@ -42,18 +61,13 @@ namespace InicioProyectoCrystalCollector
                 PictureBoxAvatar.Image = global::InicioProyectoCrystalCollector.Properties.Resources.FemaleWarrior;
                 genero = true;
             }
-            this.ResumeLayout();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void PictureBoxAvatar_Click(object sender, EventArgs e)
         {
             this.ActualizarDatos.Invoke(this);
-            EstadoAvatar estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo);
+            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo);
+            this.estado.CerrarStatus += new EstadoAvatar.CerrarStatusHandler(CerrarStatus);
             estado.Show();
         }
 
@@ -76,6 +90,14 @@ namespace InicioProyectoCrystalCollector
         public void EstablecerGemasNivel(int gemas)
         {
             Num2.Text = "of " + gemas;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.ActualizarDatos.Invoke(this);
+            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo);
+            this.estado.CerrarStatus += new EstadoAvatar.CerrarStatusHandler(CerrarStatus);
+            estado.Show();
         }
 
         public void AgregarGema()
