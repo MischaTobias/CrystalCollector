@@ -63,6 +63,7 @@ namespace InicioProyectoCrystalCollector
         private void btnResponder_Click(object sender, EventArgs e)
         {
             resultado = pregunta.VerificarRespuesta(seleccionrespuesta);
+            /*
             if (resultado)
             {
                 MessageBox.Show("La respuesta es correcta", "Advertencia");
@@ -71,6 +72,7 @@ namespace InicioProyectoCrystalCollector
             {
                 MessageBox.Show("La respuesta es incorrecta", "Advertencia");
             }
+            */
             this.PreguntaRespondida.Invoke(this, resultado);
         }
 

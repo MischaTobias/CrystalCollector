@@ -20,14 +20,13 @@ namespace InicioProyectoCrystalCollector
         public int cantvidas;
         public int puntos;
         public int x, y;
+        public int rowcanttablero;
+
         EstadoAvatar estado = new EstadoAvatar();
         public Inicio inicio = new Inicio();
 
         public delegate void StatusAvatarHandler(object sender);
         public event StatusAvatarHandler ActualizarDatos;
-
-        public delegate void TerminarPartidaHandler(object sender);
-        public event TerminarPartidaHandler TerminarPartida;
 
 
         public PanelStatusJuego()
@@ -49,6 +48,11 @@ namespace InicioProyectoCrystalCollector
             EmpezarTimer();
         }
 
+        private void CerrarStatusFinal(object sender)
+        {
+            PararTimer();
+        }
+
         public void SetAvatar()
         {
             if (genero)
@@ -66,7 +70,7 @@ namespace InicioProyectoCrystalCollector
         private void PictureBoxAvatar_Click(object sender, EventArgs e)
         {
             this.ActualizarDatos.Invoke(this);
-            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo);
+            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo, rowcanttablero);
             this.estado.CerrarStatus += new EstadoAvatar.CerrarStatusHandler(CerrarStatus);
             estado.Show();
         }
@@ -95,7 +99,7 @@ namespace InicioProyectoCrystalCollector
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.ActualizarDatos.Invoke(this);
-            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo);
+            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo, rowcanttablero);
             this.estado.CerrarStatus += new EstadoAvatar.CerrarStatusHandler(CerrarStatus);
             estado.Show();
         }
@@ -104,6 +108,14 @@ namespace InicioProyectoCrystalCollector
         {
             gemasrecogidas++;
             Num1.Text = gemasrecogidas.ToString();
+        }
+
+        public void MostrarFinal()
+        {
+            this.ActualizarDatos.Invoke(this);
+            estado = new EstadoAvatar(nombre, genero, cantvidas, gemasrecogidas, puntos, x, y, tiempo, rowcanttablero);
+            this.estado.CerrarStatus += new EstadoAvatar.CerrarStatusHandler(CerrarStatusFinal);
+            estado.Show();
         }
     }
 }

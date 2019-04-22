@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionPersonaje));
             this.pBPersonaje = new System.Windows.Forms.PictureBox();
             this.pBCambiarPersonaje = new System.Windows.Forms.PictureBox();
             this.lblDaleUnNombre = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@
             this.lblDaleUnNombre.AutoSize = true;
             this.lblDaleUnNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblDaleUnNombre.Font = new System.Drawing.Font("Supercell-Magic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDaleUnNombre.ForeColor = System.Drawing.Color.White;
             this.lblDaleUnNombre.Location = new System.Drawing.Point(358, 130);
             this.lblDaleUnNombre.Name = "lblDaleUnNombre";
             this.lblDaleUnNombre.Size = new System.Drawing.Size(303, 19);
@@ -122,6 +124,7 @@
             this.Controls.Add(this.pBCambiarPersonaje);
             this.Controls.Add(this.lblDaleUnNombre);
             this.Controls.Add(this.pBPersonaje);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeleccionPersonaje";
             this.Text = "Crystall Collector";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

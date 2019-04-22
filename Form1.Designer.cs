@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTerminarPartida = new System.Windows.Forms.Button();
+            this.btnImprimirTablero = new System.Windows.Forms.Button();
             this.TableroDeJuego = new InicioProyectoCrystalCollector.Tablero(this.components);
             this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego();
             this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
@@ -39,6 +41,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnImprimirTablero);
             this.panel1.Controls.Add(this.btnTerminarPartida);
             this.panel1.Controls.Add(this.TableroDeJuego);
             this.panel1.Controls.Add(this.panelStatusJuego1);
@@ -51,15 +54,27 @@
             // 
             // btnTerminarPartida
             // 
-            this.btnTerminarPartida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTerminarPartida.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnTerminarPartida.Font = new System.Drawing.Font("Supercell-Magic", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminarPartida.Location = new System.Drawing.Point(726, 185);
             this.btnTerminarPartida.Name = "btnTerminarPartida";
-            this.btnTerminarPartida.Size = new System.Drawing.Size(73, 55);
+            this.btnTerminarPartida.Size = new System.Drawing.Size(83, 55);
             this.btnTerminarPartida.TabIndex = 3;
             this.btnTerminarPartida.Text = "Terminar Partida";
             this.btnTerminarPartida.UseVisualStyleBackColor = true;
             this.btnTerminarPartida.Click += new System.EventHandler(this.btnTerminarPartida_Click);
+            // 
+            // btnImprimirTablero
+            // 
+            this.btnImprimirTablero.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnImprimirTablero.Font = new System.Drawing.Font("Supercell-Magic", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirTablero.Location = new System.Drawing.Point(726, 262);
+            this.btnImprimirTablero.Name = "btnImprimirTablero";
+            this.btnImprimirTablero.Size = new System.Drawing.Size(83, 55);
+            this.btnImprimirTablero.TabIndex = 4;
+            this.btnImprimirTablero.Text = "Imprimir tablero";
+            this.btnImprimirTablero.UseVisualStyleBackColor = true;
+            this.btnImprimirTablero.Click += new System.EventHandler(this.btnImprimirTablero_Click);
             // 
             // TableroDeJuego
             // 
@@ -105,6 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 628);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Crystal Collector";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -121,6 +137,7 @@
         private PanelStatusJuego panelStatusJuego1;
         private Tablero TableroDeJuego;
         private System.Windows.Forms.Button btnTerminarPartida;
+        private System.Windows.Forms.Button btnImprimirTablero;
     }
 }
 

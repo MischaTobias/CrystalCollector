@@ -94,10 +94,10 @@
             // 
             this.lblSecs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSecs.AutoSize = true;
-            this.lblSecs.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecs.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSecs.Location = new System.Drawing.Point(124, 56);
             this.lblSecs.Name = "lblSecs";
-            this.lblSecs.Size = new System.Drawing.Size(26, 16);
+            this.lblSecs.Size = new System.Drawing.Size(21, 15);
             this.lblSecs.TabIndex = 4;
             this.lblSecs.Text = "se";
             // 
@@ -162,10 +162,10 @@
             this.Num2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Num2.AutoSize = true;
             this.Num2.BackColor = System.Drawing.Color.Transparent;
-            this.Num2.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Num2.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Num2.Location = new System.Drawing.Point(3, 56);
             this.Num2.Name = "Num2";
-            this.Num2.Size = new System.Drawing.Size(79, 16);
+            this.Num2.Size = new System.Drawing.Size(60, 15);
             this.Num2.TabIndex = 3;
             this.Num2.Text = "of Num2";
             // 
@@ -174,10 +174,10 @@
             this.Num1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Num1.AutoSize = true;
             this.Num1.BackColor = System.Drawing.Color.Transparent;
-            this.Num1.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Num1.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Num1.Location = new System.Drawing.Point(18, 34);
             this.Num1.Name = "Num1";
-            this.Num1.Size = new System.Drawing.Size(50, 16);
+            this.Num1.Size = new System.Drawing.Size(41, 15);
             this.Num1.TabIndex = 2;
             this.Num1.Text = "Num1";
             // 

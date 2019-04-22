@@ -34,11 +34,11 @@ namespace InicioProyectoCrystalCollector
             this.tablero = tablero;
             this.jugador = avatar;
 
-            this.LlenarMatriz();
+            LlenarMatriz();
             this.tablero.CambiarTablero(this.dificultad);
             this.GenerarAvatarRandom();
-            this.GenerarTrolls();
             this.GenerarGemas();
+            this.GenerarTrolls();
             this.GenerarPortal();
         }
 
@@ -142,7 +142,7 @@ namespace InicioProyectoCrystalCollector
             mapa[posX, posY] = "Troll";
             troll.Coordenadas[0] = posX;
             troll.Coordenadas[1] = posY;
-            tablero.Controls.Add(troll.troll, posX, posY);
+            //tablero.Controls.Add(troll.troll, posX, posY);
         }
 
         private void PosicionGema(Gemas gema)
@@ -160,12 +160,12 @@ namespace InicioProyectoCrystalCollector
             }
             else
             {
-                do
-                {
-                    posX = x.Next(0, tablero.RowCount - 1);
-                    posY = x.Next(0, tablero.ColumnCount - 1);
-                }
-                while (mapa[posX, posY] != null);
+                    do
+                    {
+                        posX = x.Next(0, tablero.RowCount - 1);
+                        posY = x.Next(0, tablero.ColumnCount - 1);
+                    }
+                    while (mapa[posX, posY] != null);
             }
 
             mapa[posX, posY] = "Gema";
@@ -173,57 +173,59 @@ namespace InicioProyectoCrystalCollector
         }
 
         /*
-        private bool NoHayGema(int posX, int posY)
+        
+        private bool HayGemaAlrededor(int posX, int posY)
         {
             int sig1 = posX + 1;
             int sig2 = posX - 1;
             int sig3 = posY + 1;
             int sig4 = posY - 1;
 
-            int res;
-            res = SePuedeMover(posX, sig3);
-            if (res == 2 || res == -1)
+            bool res;
+            res = SePuedeMoverGema(posX, sig3);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(posX, sig4);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(posX, sig4);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(sig1, posY);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(sig1, posY);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(sig1, sig3);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(sig1, sig3);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(sig1, sig4);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(sig1, sig4);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(sig2, posY);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(sig2, posY);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(sig2, sig3);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(sig2, sig3);
+            if (res)
             {
-                return false;
+                return true;
             }
-            res = SePuedeMover(sig2, sig4);
-            if (res == 2 || res == -1)
+            res = SePuedeMoverGema(sig2, sig4);
+            if (res)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
         */
+        
 
         private void PosicionPortal(Portal portal)
         {
@@ -262,6 +264,7 @@ namespace InicioProyectoCrystalCollector
             }
             else if (mapa[x,y] == "Troll")
             {
+                MostrarTroll(trolls[0], x, y);
                 return 0;
             }
             else if (mapa[x,y] == "Gema")
@@ -276,6 +279,43 @@ namespace InicioProyectoCrystalCollector
                 return 1;
             }
         }
+
+        /*
+        public bool SePuedeMoverGema(int x, int y)
+        {
+            if (x < 0 || x > tablero.RowCount || y < 0 || y > tablero.ColumnCount ||  x > mapa.GetLength(0) - 1 || y > mapa.GetLength(1) - 1)
+            {
+                return false;
+            }
+            if (mapa[x, y] == "Gema")
+            {
+                return true;
+            }
+            return false;
+        }
+        */
+
+        /*
+        private bool HayPosicionDisponible(int )
+        {
+            for (int i = 0; i < h; i++)
+            {
+                for (int j = 0; j < h; j++)
+                {
+                    int x = HayGemaAlrededor(i, j);
+                    if (!)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        */
+
+
+
+        
 
         public int MoverAbajo()
         {
@@ -305,7 +345,6 @@ namespace InicioProyectoCrystalCollector
             {
                 ProxPosicion[0] = jugador.columnaactual;
                 ProxPosicion[1] = jugador.filaactual + 1;
-
                 return 0;
             }
             return 2;
@@ -461,6 +500,11 @@ namespace InicioProyectoCrystalCollector
             jugador.columnaactual = ProxPosicion[0];
             mapa[ProxPosicion[0], ProxPosicion[1]] = "Avatar";
             tablero.ResumeLayout();
+        }
+
+        private void MostrarTroll(Trolls troll, int posX, int posY)
+        {
+            tablero.Controls.Add(troll.troll, posX, posY);
         }
     }
 }

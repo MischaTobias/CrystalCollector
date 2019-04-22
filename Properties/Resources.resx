@@ -121,6 +121,12 @@
   <data name="PauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\PauseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CambiarPersonaje1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\CambiarPersonaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GemasVida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\GemasVida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Portal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Portal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,17 +136,14 @@
   <data name="FemaleWarrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\FemaleWarrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CambiarPersonaje1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\CambiarPersonaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GirarPersonajeReves" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\GirarPersonajeReves.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CambiarPersonaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\CambiarPersonaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TrollEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\TrollEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GirarPersonajeReves" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\GirarPersonajeReves.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TrollFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\TrollFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +160,7 @@
   <data name="logo-crystal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\logo-crystal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GemasVida" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\GemasVida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TerminarPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\TerminarPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

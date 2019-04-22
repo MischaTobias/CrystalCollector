@@ -80,11 +80,11 @@
             this.lblGenero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGenero.AutoSize = true;
             this.lblGenero.BackColor = System.Drawing.Color.Transparent;
-            this.lblGenero.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.DarkGray;
             this.lblGenero.Location = new System.Drawing.Point(284, 66);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(100, 16);
+            this.lblGenero.Size = new System.Drawing.Size(86, 15);
             this.lblGenero.TabIndex = 2;
             this.lblGenero.Text = ">  Masculino";
             // 
@@ -93,11 +93,11 @@
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.DarkGray;
             this.lblNombre.Location = new System.Drawing.Point(284, 96);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(31, 16);
+            this.lblNombre.Size = new System.Drawing.Size(25, 15);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = ">  x";
             // 
@@ -131,11 +131,11 @@
             this.lblVidas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblVidas.AutoSize = true;
             this.lblVidas.BackColor = System.Drawing.Color.Transparent;
-            this.lblVidas.Font = new System.Drawing.Font("Supercell-Magic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVidas.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVidas.ForeColor = System.Drawing.Color.DarkGray;
             this.lblVidas.Location = new System.Drawing.Point(365, 162);
             this.lblVidas.Name = "lblVidas";
-            this.lblVidas.Size = new System.Drawing.Size(37, 19);
+            this.lblVidas.Size = new System.Drawing.Size(29, 17);
             this.lblVidas.TabIndex = 6;
             this.lblVidas.Text = ">  x";
             // 
@@ -169,11 +169,11 @@
             this.lblCristalesCaja.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCristalesCaja.AutoSize = true;
             this.lblCristalesCaja.BackColor = System.Drawing.Color.Transparent;
-            this.lblCristalesCaja.Font = new System.Drawing.Font("Supercell-Magic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCristalesCaja.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCristalesCaja.ForeColor = System.Drawing.Color.DarkGray;
             this.lblCristalesCaja.Location = new System.Drawing.Point(365, 248);
             this.lblCristalesCaja.Name = "lblCristalesCaja";
-            this.lblCristalesCaja.Size = new System.Drawing.Size(32, 19);
+            this.lblCristalesCaja.Size = new System.Drawing.Size(26, 17);
             this.lblCristalesCaja.TabIndex = 9;
             this.lblCristalesCaja.Text = "> x";
             // 
@@ -195,11 +195,11 @@
             this.lblPuntos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPuntos.AutoSize = true;
             this.lblPuntos.BackColor = System.Drawing.Color.Transparent;
-            this.lblPuntos.Font = new System.Drawing.Font("Supercell-Magic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntos.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntos.ForeColor = System.Drawing.Color.DarkGray;
             this.lblPuntos.Location = new System.Drawing.Point(283, 324);
             this.lblPuntos.Name = "lblPuntos";
-            this.lblPuntos.Size = new System.Drawing.Size(38, 24);
+            this.lblPuntos.Size = new System.Drawing.Size(30, 20);
             this.lblPuntos.TabIndex = 12;
             this.lblPuntos.Text = "> x";
             // 
@@ -221,11 +221,11 @@
             this.lblPosicion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPosicion.AutoSize = true;
             this.lblPosicion.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosicion.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosicion.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosicion.ForeColor = System.Drawing.Color.DarkGray;
             this.lblPosicion.Location = new System.Drawing.Point(283, 386);
             this.lblPosicion.Name = "lblPosicion";
-            this.lblPosicion.Size = new System.Drawing.Size(62, 18);
+            this.lblPosicion.Size = new System.Drawing.Size(52, 17);
             this.lblPosicion.TabIndex = 14;
             this.lblPosicion.Text = "> (x, y)";
             // 
@@ -247,11 +247,11 @@
             this.lblTiempo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTiempo.AutoSize = true;
             this.lblTiempo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTiempo.Font = new System.Drawing.Font("Supercell-Magic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempo.ForeColor = System.Drawing.Color.DarkGray;
             this.lblTiempo.Location = new System.Drawing.Point(283, 442);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(118, 18);
+            this.lblTiempo.Size = new System.Drawing.Size(98, 17);
             this.lblTiempo.TabIndex = 16;
             this.lblTiempo.Text = "> X Segundos";
             // 
@@ -267,6 +267,8 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Cerrar Ventana";
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
             // 
             // EstadoAvatar
             // 

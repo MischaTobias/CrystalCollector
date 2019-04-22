@@ -115,6 +115,7 @@
             this.Controls.Add(this.btnIniciarNuevaPartida);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicio";
             this.Text = "Crystall Collector";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

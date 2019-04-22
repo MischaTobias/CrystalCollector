@@ -100,10 +100,10 @@
             // 
             this.Respuesta3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Respuesta3.AutoSize = true;
-            this.Respuesta3.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Respuesta3.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Respuesta3.Location = new System.Drawing.Point(387, 69);
             this.Respuesta3.Name = "Respuesta3";
-            this.Respuesta3.Size = new System.Drawing.Size(120, 20);
+            this.Respuesta3.Size = new System.Drawing.Size(98, 19);
             this.Respuesta3.TabIndex = 5;
             this.Respuesta3.TabStop = true;
             this.Respuesta3.Text = "Respuesta3";
@@ -114,10 +114,10 @@
             // 
             this.Respuesta2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Respuesta2.AutoSize = true;
-            this.Respuesta2.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Respuesta2.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Respuesta2.Location = new System.Drawing.Point(201, 69);
             this.Respuesta2.Name = "Respuesta2";
-            this.Respuesta2.Size = new System.Drawing.Size(119, 20);
+            this.Respuesta2.Size = new System.Drawing.Size(98, 19);
             this.Respuesta2.TabIndex = 4;
             this.Respuesta2.TabStop = true;
             this.Respuesta2.Text = "Respuesta2";
@@ -128,10 +128,10 @@
             // 
             this.Respuesta1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Respuesta1.AutoSize = true;
-            this.Respuesta1.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Respuesta1.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Respuesta1.Location = new System.Drawing.Point(26, 69);
             this.Respuesta1.Name = "Respuesta1";
-            this.Respuesta1.Size = new System.Drawing.Size(116, 20);
+            this.Respuesta1.Size = new System.Drawing.Size(97, 19);
             this.Respuesta1.TabIndex = 3;
             this.Respuesta1.TabStop = true;
             this.Respuesta1.Text = "Respuesta1";

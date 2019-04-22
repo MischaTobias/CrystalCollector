@@ -15,12 +15,15 @@ namespace InicioProyectoCrystalCollector
         public delegate void CerrarStatusHandler(object sender);
         public event CerrarStatusHandler CerrarStatus;
 
+        int posY;
+        int rowcant;
+
         public EstadoAvatar()
         {
 
         }
 
-        public EstadoAvatar(string nombre, bool genero, int cantvidas, int cantjoyas, int puntos, int x, int y, int tiempo)
+        public EstadoAvatar(string nombre, bool genero, int cantvidas, int cantjoyas, int puntos, int x, int y, int tiempo, int rowcant)
         {
             InitializeComponent();
             this.lblNombre.Text = "> " + nombre;
@@ -37,7 +40,10 @@ namespace InicioProyectoCrystalCollector
             this.lblVidas.Text = "> " + cantvidas.ToString();
             this.lblCristalesCaja.Text = "> " + cantjoyas.ToString();
             this.lblPuntos.Text = "> " + puntos.ToString();
-            this.lblPosicion.Text = "> (" + x.ToString() + ", " + y.ToString() + ")";
+            this.posY = y;
+            this.rowcant = rowcant;
+            CalcularY();
+            this.lblPosicion.Text = "> (" + (x).ToString() + ", " + (posY-1).ToString() + ")";
             this.lblTiempo.Text = "> " + tiempo.ToString() + " Segundos";
             this.ControlBox = false;
         }
@@ -46,6 +52,21 @@ namespace InicioProyectoCrystalCollector
         {
             CerrarStatus.Invoke(this);
             this.Close();
+        }
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+            label5.ForeColor = Color.DarkGray;
+        }
+
+        private void label5_MouseLeave(object sender, EventArgs e)
+        {
+            label5.ForeColor = Color.White;
+        }
+
+        private void CalcularY()
+        {
+            posY = rowcant - posY;
         }
     }
 }

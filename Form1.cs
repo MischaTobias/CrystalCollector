@@ -14,6 +14,7 @@ namespace InicioProyectoCrystalCollector
     {
         private Preguntas[] pr = new Preguntas[6];
         private PictureBox troll = new PictureBox();
+        private ImpresionTablero impresion = new ImpresionTablero();
         private int nivel = 1;
         private bool Freeze = false;
         private int ContadorPreguntas = 0;
@@ -72,7 +73,7 @@ namespace InicioProyectoCrystalCollector
             pr[4] = new Preguntas("¿Cuál es la operación correcta?", new string[3] { "2 + 2 = Pez", "5 x 5 = 120", "Raíz de 144 = 12" }, 2);
 
             Random numpregunta = new Random();
-            int num = numpregunta.Next(0, 4);
+            int num = numpregunta.Next(0, 5);
 
             this.panelPreguntas1.AsignarPregunta(pr[num]);
         }
@@ -117,7 +118,8 @@ namespace InicioProyectoCrystalCollector
                                 {
                                     this.panelStatusJuego1.PararTimer();
                                     Freeze = true;
-                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                    this.panelStatusJuego1.MostrarFinal();
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "FIN DEL JUEGO");
                                 }
                                 break;
                         }
@@ -154,7 +156,8 @@ namespace InicioProyectoCrystalCollector
                                 {
                                     this.panelStatusJuego1.PararTimer();
                                     Freeze = true;
-                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                    this.panelStatusJuego1.MostrarFinal();
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "FIN DEL JUEGO");
                                 }
                                 break;
                         }
@@ -191,7 +194,8 @@ namespace InicioProyectoCrystalCollector
                                 {
                                     this.panelStatusJuego1.PararTimer();
                                     Freeze = true;
-                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                    this.panelStatusJuego1.MostrarFinal();
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "FIN DEL JUEGO");
                                 }
                                 break;
                         }
@@ -228,7 +232,8 @@ namespace InicioProyectoCrystalCollector
                                 {
                                     this.panelStatusJuego1.PararTimer();
                                     Freeze = true;
-                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "ADVERTENCIA");
+                                    this.panelStatusJuego1.MostrarFinal();
+                                    MessageBox.Show("Ha terminado el juego, felicitaciones", "FIN DEL JUEGO");
                                 }
                                 break;
                         }
@@ -257,6 +262,7 @@ namespace InicioProyectoCrystalCollector
                 this.panelStatusJuego1.EmpezarTimer();
                 this.panelPreguntas1.CambiarDisponibilidadBtnCambiar(false);
                 this.jugador.CambiarPunteo(5);
+                this.jugador.CambiarVidas(1);
                 lvl.MoverTroll();
                 VaciarPanelPreguntas();
             }
@@ -268,7 +274,7 @@ namespace InicioProyectoCrystalCollector
                 if (jugador.cantvidas == 0)
                 {
                     Freeze = true;
-                    MessageBox.Show("Ha perdido todas sus vidas, el juego ha terminado", "ADVERTENCIA");
+                    MessageBox.Show("Ha perdido todas sus vidas, el juego ha terminado", "FIN DEL JUEGO");
                 }
                 else if (ContadorPreguntas == 3)
                 {
@@ -325,8 +331,9 @@ namespace InicioProyectoCrystalCollector
             this.panelStatusJuego1.genero = genero;
             this.panelStatusJuego1.cantvidas = jugador.cantvidas;
             this.panelStatusJuego1.puntos = jugador.punteo;
-            this.panelStatusJuego1.x = jugador.filaactual;
-            this.panelStatusJuego1.y = jugador.columnaactual;
+            this.panelStatusJuego1.x = jugador.columnaactual;
+            this.panelStatusJuego1.y = jugador.filaactual;
+            this.panelStatusJuego1.rowcanttablero = TableroDeJuego.RowCount;
             this.panelStatusJuego1.PararTimer();
         }
 
@@ -347,5 +354,20 @@ namespace InicioProyectoCrystalCollector
         {
             this.Close();
         }
+
+        
+        private void btnImprimirTablero_Click(object sender, EventArgs e)
+        {
+            this.panelStatusJuego1.PararTimer();
+            impresion = new ImpresionTablero(this.lvl.mapa, jugador.filaactual, jugador.columnaactual, nivel, genero);
+            this.impresion.CerrarImpresion += new ImpresionTablero.CerrarImpresionHandler(CerrarImpresion);
+            impresion.Show();
+        }
+
+        private void CerrarImpresion(object sender)
+        {
+            this.panelStatusJuego1.EmpezarTimer();
+        }
+        
     }
 }
