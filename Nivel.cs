@@ -8,10 +8,11 @@ namespace InicioProyectoCrystalCollector
 {
     class Nivel
     {
-        // Generaremos los numeros aleatorios
+        /// <summary>
+        /// Declaración de variables
+        /// </summary>
         Random x = new Random();
 
-        // Incluimos los elementos del nivel
         Trolls[] trolls = new Trolls[2];
         Gemas[] gemas = new Gemas[4];
         Portal portal;
@@ -19,15 +20,23 @@ namespace InicioProyectoCrystalCollector
         Tablero tablero = new Tablero();
         int[] ProxPosicion = new int[2];
 
-        // Hacemos un mapa del nivel
         public string[,] mapa = new string[3, 3];
-
         int dificultad = 1;
+
+        /// <summary>
+        /// ConstructorNivel
+        /// </summary>
         public Nivel()
         {
 
         }
 
+        /// <summary>
+        /// Constructor nivel que asigna a valores a las diferentes variables y lleva a cabo otros procedimientos.
+        /// </summary>
+        /// <param name="dificultad"></param>
+        /// <param name="tablero"></param>
+        /// <param name="avatar"></param>
         public Nivel(int dificultad, Tablero tablero, Avatar avatar)
         {
             this.dificultad = dificultad;
@@ -42,6 +51,9 @@ namespace InicioProyectoCrystalCollector
             this.GenerarPortal();
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el tamaño de la matriz mapa con base en la dificultad.
+        /// </summary>
         public void LlenarMatriz()
         {
             switch (this.dificultad)
@@ -64,13 +76,16 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
+        /// <summary>
+        /// Procedimiento que lleva a cabo la función CambiarTablero.
+        /// </summary>
         public void GenerarTablero()
         {
             tablero.CambiarTablero(dificultad);
         }
 
         /// <summary>
-        /// Genera el avatar de forma Aleatoria
+        /// Procedimiento que genera el avatar de forma Aleatoria.
         /// </summary>
         public void GenerarAvatarRandom()
         {
@@ -86,6 +101,9 @@ namespace InicioProyectoCrystalCollector
             jugador.filaactual = posY;
         }
 
+        /// <summary>
+        /// Procedimiento que genera los trolls de forma aleatoria.
+        /// </summary>
         public void GenerarTrolls()
         {
             int cantidad = (dificultad - 2) * 2 + 2;
@@ -109,6 +127,9 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
+        /// <summary>
+        /// Procedimiento que genera las gemas de forma aleatoria.
+        /// </summary>
         public void GenerarGemas()
         {
             int cantidad = (dificultad * 2) + 2;
@@ -122,12 +143,19 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
+        /// <summary>
+        /// Procedimiento que genera el portal de forma aleatoria.
+        /// </summary>
         public void GenerarPortal()
         {
             portal = new Portal();
             PosicionPortal(portal);
         }
 
+        /// <summary>
+        /// Procedimiento que asigna una posición aleatoria a los troll.
+        /// </summary>
+        /// <param name="troll"></param>
         private void PosicionTroll(Trolls troll)
         {
             int posX, posY;
@@ -145,6 +173,10 @@ namespace InicioProyectoCrystalCollector
             //tablero.Controls.Add(troll.troll, posX, posY);
         }
 
+        /// <summary>
+        /// Procedimiento que asigna una posición aleatoria a las gemas.
+        /// </summary>
+        /// <param name="gema"></param>
         private void PosicionGema(Gemas gema)
         {
             int posX, posY;
@@ -226,7 +258,10 @@ namespace InicioProyectoCrystalCollector
         }
         */
         
-
+        /// <summary>
+        /// Procedimiento que asigna una posición aleatoria al portal.
+        /// </summary>
+        /// <param name="portal"></param>
         private void PosicionPortal(Portal portal)
         {
             int posX, posY;
@@ -256,6 +291,12 @@ namespace InicioProyectoCrystalCollector
             tablero.Controls.Add(portal.portal, posX, posY);
         }
 
+        /// <summary>
+        /// Función que devuelve diferentes valores con base en el objeto que se encuentre en una posición de la matriz mapa.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public int SePuedeMover(int x, int y)
         {
             if (x < 0 || x > tablero.RowCount || y < 0 || y > tablero.ColumnCount)
@@ -313,10 +354,10 @@ namespace InicioProyectoCrystalCollector
         }
         */
 
-
-
-        
-
+        /// <summary>
+        /// Procedimiento que asigna valores a variables o lleva a cabo diferentes procedimientos con base a lo que la función SePuedeMover devuelva como valor.
+        /// </summary>
+        /// <returns></returns>
         public int MoverAbajo()
         {
             int res = SePuedeMover(jugador.columnaactual, jugador.filaactual + 1);
@@ -350,6 +391,10 @@ namespace InicioProyectoCrystalCollector
             return 2;
         }
 
+        /// <summary>
+        /// Procedimiento que asigna valores a variables o lleva a cabo diferentes procedimientos con base a lo que la función SePuedeMover devuelva como valor.
+        /// </summary>
+        /// <returns></returns>
         public int MoverArriba()
         {
             int res = SePuedeMover(jugador.columnaactual, jugador.filaactual - 1);
@@ -383,6 +428,10 @@ namespace InicioProyectoCrystalCollector
             return 2;
         }
 
+        /// <summary>
+        /// Procedimiento que asigna valores a variables o lleva a cabo diferentes procedimientos con base a lo que la función SePuedeMover devuelva como valor.
+        /// </summary>
+        /// <returns></returns>
         public int MoverDerecha()
         {
             int res = SePuedeMover(jugador.columnaactual + 1, jugador.filaactual);
@@ -416,6 +465,10 @@ namespace InicioProyectoCrystalCollector
             return 2;
         }
 
+        /// <summary>
+        /// Procedimiento que asigna valores a variables o lleva a cabo diferentes procedimientos con base a lo que la función SePuedeMover devuelva como valor.
+        /// </summary>
+        /// <returns></returns>
         public int MoverIzquierda()
         {
             int res = SePuedeMover(jugador.columnaactual - 1, jugador.filaactual);
@@ -449,6 +502,11 @@ namespace InicioProyectoCrystalCollector
             return 2;
         }
 
+        /// <summary>
+        /// Procedimiento que elimina una gema en el table layout panel y en la matriz mapa con base en posiciones en el eje x y y.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public void RemoverGema(int x, int y)
         {
             tablero.Controls.Remove(tablero.GetControlFromPosition(x, y));
@@ -460,6 +518,12 @@ namespace InicioProyectoCrystalCollector
             mapa[x, y] = "Avatar";
         }
 
+        /// <summary>
+        /// Función que encuentra y devuelve un troll con base en posiciones en el eje x y y.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public Trolls EncontrarTroll(int x, int y)
         {
             Trolls troll;
@@ -474,6 +538,9 @@ namespace InicioProyectoCrystalCollector
             return null;
         }
 
+        /// <summary>
+        /// Procedimiento que asigna una nueva posición aleatoria a un troll específico y mueve el avatar a la posicion que ocupaba el troll.
+        /// </summary>
         public void MoverTroll()
         {
             tablero.SuspendLayout();
@@ -488,6 +555,9 @@ namespace InicioProyectoCrystalCollector
             tablero.ResumeLayout();
         }
 
+        /// <summary>
+        /// Procedimiento que asigna una nueva posición aleatoria a al portal y mueve el avatar a la posicion que ocupaba el portal.
+        /// </summary>
         public void MoverPortal()
         {
             tablero.SuspendLayout();
@@ -502,6 +572,12 @@ namespace InicioProyectoCrystalCollector
             tablero.ResumeLayout();
         }
 
+        /// <summary>
+        /// Procedimiento que muestra un troll en el table layout panel con base en posiciones x y y.
+        /// </summary>
+        /// <param name="troll"></param>
+        /// <param name="posX"></param>
+        /// <param name="posY"></param>
         private void MostrarTroll(Trolls troll, int posX, int posY)
         {
             tablero.Controls.Add(troll.troll, posX, posY);

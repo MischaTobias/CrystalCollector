@@ -12,6 +12,9 @@ namespace InicioProyectoCrystalCollector
 {
     public partial class Tablero : TableLayoutPanel
     {
+        /// <summary>
+        /// Constructor Tablero
+        /// </summary>
         public Tablero()
         {
             InitializeComponent();
@@ -29,6 +32,9 @@ namespace InicioProyectoCrystalCollector
               ControlStyles.UserPaint, true);
         }
 
+        /// <summary>
+        /// Dependiendo del nivel de dificultad, lleva a cabo procedimientos con distintos parámetros.
+        /// </summary>
         public void CambiarTablero(int dificultad)
         {
             switch (dificultad)
@@ -56,6 +62,10 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el table layout panel con base a la cantidad de filas que envían como parámetro.
+        /// </summary>
+        /// <param name="filas"></param>
         public void CambiarFilas(int filas)
         {
             this.SuspendLayout();
@@ -73,6 +83,10 @@ namespace InicioProyectoCrystalCollector
             this.ResumeLayout();
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el table layout panel con base a la cantidad de columnas que envían como parámetro.
+        /// </summary>
+        /// <param name="columnas"></param>
         public void CambiarColumnas(int columnas)
         {
             this.SuspendLayout();

@@ -12,46 +12,69 @@ namespace InicioProyectoCrystalCollector
 {
     public partial class Inicio : Form
     {
+        /// <summary>
+        /// Constructor Inicio.
+        /// </summary>
         public Inicio()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Procedimiento que cierra este form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el color del label cuando el mouse entra en contacto con él.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblSalir_MouseEnter(object sender, EventArgs e)
         {
             lblSalir.ForeColor = Color.Gray;
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el color del label cuando el mouse deja de estar en contacto con él.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblSalir_MouseLeave(object sender, EventArgs e)
         {
             lblSalir.ForeColor = Color.Black;
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el color del label cuando el mouse entra en contacto con él.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblAcercaDe_MouseEnter(object sender, EventArgs e)
         {
             lblAcercaDe.ForeColor = Color.Gray;
         }
 
+        /// <summary>
+        /// Procedimiento que cambia el color del label cuando el mouse deja de estar en contacto con él.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblAcercaDe_MouseLeave(object sender, EventArgs e)
         {
             lblAcercaDe.ForeColor = Color.Black;
         }
 
+        /// <summary>
+        /// Procedimiento que crea un nuevo form del tipo selección personaje y que esconde este form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIniciarNuevaPartida_Click(object sender, EventArgs e)
         {
             SeleccionPersonaje seleccion = new SeleccionPersonaje();
@@ -60,6 +83,11 @@ namespace InicioProyectoCrystalCollector
             this.Hide();
         }
 
+        /// <summary>
+        /// Procedimiento que cierra este form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void seleccion_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();

@@ -112,7 +112,6 @@
             this.panelPreguntas1.Name = "panelPreguntas1";
             this.panelPreguntas1.Size = new System.Drawing.Size(821, 141);
             this.panelPreguntas1.TabIndex = 0;
-            this.panelPreguntas1.Load += new System.EventHandler(this.panelPreguntas1_Load);
             // 
             // Form1
             // 

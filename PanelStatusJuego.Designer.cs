@@ -144,7 +144,6 @@
             this.PictureBoxTimer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxTimer.TabIndex = 0;
             this.PictureBoxTimer.TabStop = false;
-            this.PictureBoxTimer.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // PanelPauseButton
             // 
