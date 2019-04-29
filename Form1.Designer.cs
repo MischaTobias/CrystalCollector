@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTerminarPartida = new System.Windows.Forms.Button();
             this.btnImprimirTablero = new System.Windows.Forms.Button();
+            this.btnTerminarPartida = new System.Windows.Forms.Button();
             this.TableroDeJuego = new InicioProyectoCrystalCollector.Tablero(this.components);
             this.panelStatusJuego1 = new InicioProyectoCrystalCollector.PanelStatusJuego();
             this.panelPreguntas1 = new InicioProyectoCrystalCollector.PanelPreguntas();
@@ -52,18 +52,6 @@
             this.panel1.Size = new System.Drawing.Size(821, 628);
             this.panel1.TabIndex = 1;
             // 
-            // btnTerminarPartida
-            // 
-            this.btnTerminarPartida.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnTerminarPartida.Font = new System.Drawing.Font("Supercell-Magic", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminarPartida.Location = new System.Drawing.Point(726, 185);
-            this.btnTerminarPartida.Name = "btnTerminarPartida";
-            this.btnTerminarPartida.Size = new System.Drawing.Size(83, 55);
-            this.btnTerminarPartida.TabIndex = 3;
-            this.btnTerminarPartida.Text = "Terminar Partida";
-            this.btnTerminarPartida.UseVisualStyleBackColor = true;
-            this.btnTerminarPartida.Click += new System.EventHandler(this.btnTerminarPartida_Click);
-            // 
             // btnImprimirTablero
             // 
             this.btnImprimirTablero.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -75,6 +63,18 @@
             this.btnImprimirTablero.Text = "Imprimir tablero";
             this.btnImprimirTablero.UseVisualStyleBackColor = true;
             this.btnImprimirTablero.Click += new System.EventHandler(this.btnImprimirTablero_Click);
+            // 
+            // btnTerminarPartida
+            // 
+            this.btnTerminarPartida.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnTerminarPartida.Font = new System.Drawing.Font("Supercell-Magic", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminarPartida.Location = new System.Drawing.Point(726, 185);
+            this.btnTerminarPartida.Name = "btnTerminarPartida";
+            this.btnTerminarPartida.Size = new System.Drawing.Size(83, 55);
+            this.btnTerminarPartida.TabIndex = 3;
+            this.btnTerminarPartida.Text = "Terminar Partida";
+            this.btnTerminarPartida.UseVisualStyleBackColor = true;
+            this.btnTerminarPartida.Click += new System.EventHandler(this.btnTerminarPartida_Click);
             // 
             // TableroDeJuego
             // 

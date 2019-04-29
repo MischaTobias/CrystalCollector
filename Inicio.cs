@@ -13,6 +13,11 @@ namespace InicioProyectoCrystalCollector
     public partial class Inicio : Form
     {
         /// <summary>
+        /// Declaración de variables.
+        /// </summary>
+        Instrucciones instrucciones;
+
+        /// <summary>
         /// Constructor Inicio.
         /// </summary>
         public Inicio()
@@ -47,7 +52,7 @@ namespace InicioProyectoCrystalCollector
         /// <param name="e"></param>
         private void lblSalir_MouseLeave(object sender, EventArgs e)
         {
-            lblSalir.ForeColor = Color.Black;
+            lblSalir.ForeColor = Color.White;
         }
 
         /// <summary>
@@ -67,7 +72,7 @@ namespace InicioProyectoCrystalCollector
         /// <param name="e"></param>
         private void lblAcercaDe_MouseLeave(object sender, EventArgs e)
         {
-            lblAcercaDe.ForeColor = Color.Black;
+            lblAcercaDe.ForeColor = Color.White;
         }
 
         /// <summary>
@@ -91,6 +96,28 @@ namespace InicioProyectoCrystalCollector
         private void seleccion_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Procedimiento que crea un nuevo form tipo instrucciones y da un parámetro true.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnInstrucciones_Click(object sender, EventArgs e)
+        {
+            instrucciones = new Instrucciones(true);
+            instrucciones.Show();
+        }
+
+        /// <summary>
+        /// Procedimiento que crea un nuevo form tipo instrucciones y da un parámetro false.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lblAcercaDe_Click(object sender, EventArgs e)
+        {
+            instrucciones = new Instrucciones(false);
+            instrucciones.Show();
         }
     }
 }

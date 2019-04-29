@@ -53,6 +53,15 @@ namespace InicioProyectoCrystalCollector
             this.columnajugador = columnajugador;
             this.dificultad = dificultad;
             this.genero = genero;
+            if (genero)
+            {
+                pBPersonajemuestra.Image = global::InicioProyectoCrystalCollector.Properties.Resources.MaleWarrior;
+            }
+            else
+            {
+                pBPersonajemuestra.Image = global::InicioProyectoCrystalCollector.Properties.Resources.FemaleWarrior;
+            }
+            this.jugador.SeleccionarGenero(genero);
             CambiarTablero();
             GenerarGemas();
             LlenarDataGrid();

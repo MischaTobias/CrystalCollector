@@ -69,7 +69,7 @@ namespace InicioProyectoCrystalCollector
         /// </summary>
         public void GeneroAvatar()
         {
-            if (this.genero)
+            if (genero)
             {
                 avatar.Image = global::InicioProyectoCrystalCollector.Properties.Resources.MaleWarrior;
             }

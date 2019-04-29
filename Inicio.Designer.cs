@@ -72,6 +72,7 @@
             this.btnInstrucciones.TabIndex = 2;
             this.btnInstrucciones.Text = "Instrucciones";
             this.btnInstrucciones.UseVisualStyleBackColor = true;
+            this.btnInstrucciones.Click += new System.EventHandler(this.btnInstrucciones_Click);
             // 
             // lblAcercaDe
             // 
@@ -79,11 +80,13 @@
             this.lblAcercaDe.AutoSize = true;
             this.lblAcercaDe.BackColor = System.Drawing.Color.Transparent;
             this.lblAcercaDe.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcercaDe.ForeColor = System.Drawing.Color.White;
             this.lblAcercaDe.Location = new System.Drawing.Point(12, 453);
             this.lblAcercaDe.Name = "lblAcercaDe";
-            this.lblAcercaDe.Size = new System.Drawing.Size(237, 16);
+            this.lblAcercaDe.Size = new System.Drawing.Size(232, 16);
             this.lblAcercaDe.TabIndex = 3;
-            this.lblAcercaDe.Text = "Acerca de Crystall Collector";
+            this.lblAcercaDe.Text = "Acerca de Crystal Collector";
+            this.lblAcercaDe.Click += new System.EventHandler(this.lblAcercaDe_Click);
             this.lblAcercaDe.MouseEnter += new System.EventHandler(this.lblAcercaDe_MouseEnter);
             this.lblAcercaDe.MouseLeave += new System.EventHandler(this.lblAcercaDe_MouseLeave);
             // 
@@ -93,7 +96,7 @@
             this.lblSalir.AutoSize = true;
             this.lblSalir.BackColor = System.Drawing.Color.Transparent;
             this.lblSalir.Font = new System.Drawing.Font("Supercell-Magic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalir.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSalir.ForeColor = System.Drawing.Color.White;
             this.lblSalir.Location = new System.Drawing.Point(437, 453);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(122, 16);

@@ -65,6 +65,8 @@ namespace InicioProyectoCrystalCollector
             jugador.GeneroAvatar();
             VaciarPanelPreguntas();
             lvl = new Nivel(nivel, TableroDeJuego, jugador);
+            this.cantidadgemas = this.lvl.contgemas;
+            this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
         }
 
         /// <summary>
@@ -88,7 +90,7 @@ namespace InicioProyectoCrystalCollector
         /// Genera los objetos que contiene una matriz de tipo Preguntas, además, indica la respuesta correcta y muestra una pregunta aleatoria en el Panel
         /// de Preguntas.
         /// </summary>
-        public void GenerarPreguntas()
+        private void GenerarPreguntas()
         {
             pr[0] = new Preguntas("¿Quién escribió Romeo y Julieta?", new string[3] { "Shakespeare", "Leonardo Da Vinci", "Leonardo DiCaprio" }, 0);
             pr[1] = new Preguntas("¿Cuál de los siguientes es un número primo?", new string[3] { "21", "25", "17" }, 2);
@@ -139,6 +141,10 @@ namespace InicioProyectoCrystalCollector
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
                                 this.jugador.CambiarPunteo(10);
+                                if (this.panelStatusJuego1.gemasrecogidas == cantidadgemas)
+                                {
+                                    MessageBox.Show("Ha recogido todas las gemas, puede dirigirse al portal", "ATENCIÓN");
+                                }
                                 break;
                             case 3:
                                 if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
@@ -177,6 +183,10 @@ namespace InicioProyectoCrystalCollector
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
                                 this.jugador.CambiarPunteo(10);
+                                if (this.panelStatusJuego1.gemasrecogidas == cantidadgemas)
+                                {
+                                    MessageBox.Show("Ha recogido todas las gemas, puede dirigirse al portal", "ATENCIÓN");
+                                }
                                 break;
                             case 3:
                                 if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
@@ -215,6 +225,10 @@ namespace InicioProyectoCrystalCollector
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
                                 this.jugador.CambiarPunteo(10);
+                                if (this.panelStatusJuego1.gemasrecogidas == cantidadgemas)
+                                {
+                                    MessageBox.Show("Ha recogido todas las gemas, puede dirigirse al portal", "ATENCIÓN");
+                                }
                                 break;
                             case 3:
                                 if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
@@ -253,6 +267,10 @@ namespace InicioProyectoCrystalCollector
                             case 2:
                                 this.panelStatusJuego1.AgregarGema();
                                 this.jugador.CambiarPunteo(10);
+                                if (this.panelStatusJuego1.gemasrecogidas == cantidadgemas)
+                                {
+                                    MessageBox.Show("Ha recogido todas las gemas, puede dirigirse al portal", "ATENCIÓN");
+                                }
                                 break;
                             case 3:
                                 if (this.panelStatusJuego1.gemasrecogidas != cantidadgemas)
@@ -382,6 +400,7 @@ namespace InicioProyectoCrystalCollector
             TableroDeJuego.Controls.Clear();
             lvl = new Nivel(nivel, TableroDeJuego, jugador);
             EstablecerGemasNivel();
+            this.cantidadgemas = this.lvl.contgemas;
             this.panelStatusJuego1.gemasrecogidas = 0;
             this.panelStatusJuego1.EstablecerGemasNivel(cantidadgemas);
             this.panelStatusJuego1.GemasCero();

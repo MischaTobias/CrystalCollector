@@ -19,6 +19,7 @@ namespace InicioProyectoCrystalCollector
         Avatar jugador = new Avatar();
         Tablero tablero = new Tablero();
         int[] ProxPosicion = new int[2];
+        public int contgemas = 0;
 
         public string[,] mapa = new string[3, 3];
         int dificultad = 1;
@@ -134,12 +135,24 @@ namespace InicioProyectoCrystalCollector
         {
             int cantidad = (dificultad * 2) + 2;
             gemas = new Gemas[cantidad];
-
+            
             for (int i = 0; i < gemas.Length; i++)
             {
-                Gemas newGema = new Gemas();
-                gemas[i] = newGema;
-                PosicionGema(newGema);
+                if (dificultad > 1)
+                {
+                    if (HayUnLugarDisponible())
+                    {
+                        Gemas newGema = new Gemas();
+                        gemas[i] = newGema;
+                        PosicionGema(newGema);
+                    }
+                }
+                else
+                {
+                    Gemas newGema = new Gemas();
+                    gemas[i] = newGema;
+                    PosicionGema(newGema);
+                }
             }
         }
 
@@ -180,6 +193,27 @@ namespace InicioProyectoCrystalCollector
         private void PosicionGema(Gemas gema)
         {
             int posX, posY;
+            int limx = 0, limy = 0;
+
+            switch (dificultad)
+            {
+                case 32:
+                    limx = 4;
+                    limy = 5;
+                    break;
+                case 3:
+                    limx = 5;
+                    limy = 6;
+                    break;
+                case 4:
+                    limx = 6;
+                    limy = 7;
+                    break;
+                case 5:
+                    limx = 10;
+                    limy = 10;
+                    break;
+            }
 
             if (dificultad == 1)
             {
@@ -189,22 +223,60 @@ namespace InicioProyectoCrystalCollector
                     posY = x.Next(0, tablero.ColumnCount);
                 }
                 while (mapa[posX, posY] != null);
+
+                mapa[posX, posY] = "Gema";
+                tablero.Controls.Add(gema.gema, posX, posY);
+            }
+            else if (dificultad == 2)
+            {
+                do
+                {
+                    posX = x.Next(0, 4);
+                    posY = x.Next(0, 5);
+                }
+                while (mapa[posX, posY] != null || posY == 1 || posY == 3 || HayGemaAlrededor(posX, posY));
+
+                mapa[posX, posY] = "Gema";
+                tablero.Controls.Add(gema.gema, posX, posY);
             }
             else
             {
-                    do
-                    {
-                        posX = x.Next(0, tablero.RowCount - 1);
-                        posY = x.Next(0, tablero.ColumnCount - 1);
-                    }
-                    while (mapa[posX, posY] != null);
+                do
+                {
+                    posX = x.Next(0, limx);
+                    posY = x.Next(0, limy);
+                }
+                while (mapa[posX, posY] != null || HayGemaAlrededor(posX, posY));
+
+                mapa[posX, posY] = "Gema";
+                tablero.Controls.Add(gema.gema, posX, posY);
             }
 
-            mapa[posX, posY] = "Gema";
-            tablero.Controls.Add(gema.gema, posX, posY);
+            contgemas++;
         }
 
-        /*
+        private bool HayUnLugarDisponible()
+        {
+            for (int i = 0; i < mapa.GetLength(0); i++)
+            {
+                for (int j = 0; j < mapa.GetLength(1); j++)
+                {
+                    if (mapa[i,j] == null)
+                    {
+                        if (HayGemaAlrededor(i, j))
+                        {
+
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
         
         private bool HayGemaAlrededor(int posX, int posY)
         {
@@ -214,49 +286,49 @@ namespace InicioProyectoCrystalCollector
             int sig4 = posY - 1;
 
             bool res;
-            res = SePuedeMoverGema(posX, sig3);
+            res = HayUnaGema(posX, sig3);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(posX, sig4);
+            res = HayUnaGema(posX, sig4);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(sig1, posY);
+            res = HayUnaGema(sig1, posY);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(sig1, sig3);
+            res = HayUnaGema(sig1, sig3);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(sig1, sig4);
+            res = HayUnaGema(sig1, sig4);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(sig2, posY);
+            res = HayUnaGema(sig2, posY);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(sig2, sig3);
+            res = HayUnaGema(sig2, sig3);
             if (res)
             {
                 return true;
             }
-            res = SePuedeMoverGema(sig2, sig4);
+            res = HayUnaGema(sig2, sig4);
             if (res)
             {
                 return true;
             }
+
             return false;
         }
-        */
         
         /// <summary>
         /// Procedimiento que asigna una posición aleatoria al portal.
@@ -321,8 +393,7 @@ namespace InicioProyectoCrystalCollector
             }
         }
 
-        /*
-        public bool SePuedeMoverGema(int x, int y)
+        public bool HayUnaGema(int x, int y)
         {
             if (x < 0 || x > tablero.RowCount || y < 0 || y > tablero.ColumnCount ||  x > mapa.GetLength(0) - 1 || y > mapa.GetLength(1) - 1)
             {
@@ -334,25 +405,6 @@ namespace InicioProyectoCrystalCollector
             }
             return false;
         }
-        */
-
-        /*
-        private bool HayPosicionDisponible(int )
-        {
-            for (int i = 0; i < h; i++)
-            {
-                for (int j = 0; j < h; j++)
-                {
-                    int x = HayGemaAlrededor(i, j);
-                    if (!)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-        */
 
         /// <summary>
         /// Procedimiento que asigna valores a variables o lleva a cabo diferentes procedimientos con base a lo que la función SePuedeMover devuelva como valor.
@@ -378,6 +430,7 @@ namespace InicioProyectoCrystalCollector
             if (res > 0)
             {
                 tablero.Controls.Remove(jugador.avatar);
+                mapa[jugador.columnaactual, jugador.filaactual] = null;
                 jugador.filaactual++;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
                 return 1;
@@ -415,6 +468,7 @@ namespace InicioProyectoCrystalCollector
             if (res > 0)
             {
                 tablero.Controls.Remove(jugador.avatar);
+                mapa[jugador.columnaactual, jugador.filaactual] = null;
                 jugador.filaactual--;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
                 return 1;
@@ -452,6 +506,7 @@ namespace InicioProyectoCrystalCollector
             if (res > 0)
             {
                 tablero.Controls.Remove(jugador.avatar);
+                mapa[jugador.columnaactual, jugador.filaactual] = null;
                 jugador.columnaactual++;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
                 return 1;
@@ -489,6 +544,7 @@ namespace InicioProyectoCrystalCollector
             if (res > 0)
             {
                 tablero.Controls.Remove(jugador.avatar);
+                mapa[jugador.columnaactual, jugador.filaactual] = null;
                 jugador.columnaactual--;
                 tablero.Controls.Add(jugador.avatar, jugador.columnaactual, jugador.filaactual);
                 return 1;
@@ -561,14 +617,14 @@ namespace InicioProyectoCrystalCollector
         public void MoverPortal()
         {
             tablero.SuspendLayout();
-            tablero.Controls.Remove(tablero.GetControlFromPosition(ProxPosicion[0], ProxPosicion[1]));
-            PosicionPortal(portal);
+            tablero.Controls.Remove(portal.portal);
 
             tablero.Controls.Remove(jugador.avatar);
             tablero.Controls.Add(jugador.avatar, ProxPosicion[0], ProxPosicion[1]);
             jugador.filaactual = ProxPosicion[1];
             jugador.columnaactual = ProxPosicion[0];
             mapa[ProxPosicion[0], ProxPosicion[1]] = "Avatar";
+            PosicionPortal(portal);
             tablero.ResumeLayout();
         }
 
