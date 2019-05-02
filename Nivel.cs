@@ -35,8 +35,8 @@ namespace InicioProyectoCrystalCollector
         /// <summary>
         /// Constructor nivel que asigna a valores a las diferentes variables y lleva a cabo otros procedimientos.
         /// </summary>
-        /// <param name="dificultad"></param>
-        /// <param name="tablero"></param>
+        /// <param name="dificultad"></param> Recibe un int para establecer el valor de la variable local "dificultad".
+        /// <param name="tablero"></param> 
         /// <param name="avatar"></param>
         public Nivel(int dificultad, Tablero tablero, Avatar avatar)
         {
@@ -222,7 +222,7 @@ namespace InicioProyectoCrystalCollector
                     posX = x.Next(0, tablero.RowCount);
                     posY = x.Next(0, tablero.ColumnCount);
                 }
-                while (mapa[posX, posY] != null);
+                while (mapa[posX, posY] != null || (posX == 2 && posY == 0));
 
                 mapa[posX, posY] = "Gema";
                 tablero.Controls.Add(gema.gema, posX, posY);
@@ -340,12 +340,8 @@ namespace InicioProyectoCrystalCollector
 
             if (dificultad == 1)
             {
-                do
-                {
-                    posX = x.Next(0, tablero.RowCount);
-                    posY = x.Next(0, tablero.ColumnCount);
-                }
-                while (mapa[posX, posY] != null);
+                posX = 2;
+                posY = 0;
             }
             else
             {

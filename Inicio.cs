@@ -26,7 +26,7 @@ namespace InicioProyectoCrystalCollector
         }
 
         /// <summary>
-        /// Procedimiento que cierra este form.
+        /// Procedimiento que cierra este form al hacer click en un botón.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -76,7 +76,7 @@ namespace InicioProyectoCrystalCollector
         }
 
         /// <summary>
-        /// Procedimiento que crea un nuevo form del tipo selección personaje y que esconde este form.
+        /// Procedimiento que crea un nuevo form del tipo selección personaje, lo muestra y esconde este form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

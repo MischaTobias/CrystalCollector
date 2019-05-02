@@ -35,6 +35,7 @@ namespace InicioProyectoCrystalCollector
         /// <summary>
         /// Dependiendo del nivel de dificultad, lleva a cabo procedimientos con distintos parámetros.
         /// </summary>
+        /// <param name="dificultad"></param> La dificultad es un int que entra como un valor de evaluación en un switch.
         public void CambiarTablero(int dificultad)
         {
             switch (dificultad)

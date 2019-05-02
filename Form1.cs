@@ -15,7 +15,7 @@ namespace InicioProyectoCrystalCollector
         /// <summary>
         /// Establecimiento de variables.
         /// </summary>
-        private Preguntas[] pr = new Preguntas[6];
+        private Preguntas[] pr = new Preguntas[15];
         private PictureBox troll = new PictureBox();
         private ImpresionTablero impresion = new ImpresionTablero();
         private int nivel = 1;
@@ -97,9 +97,19 @@ namespace InicioProyectoCrystalCollector
             pr[2] = new Preguntas("¿En qué año se fundó la URL?", new string[3] { "1983", "1961", "1745" }, 1);
             pr[3] = new Preguntas("¿En qué año se estrenó el titanic?", new string[3] { "1997", "2000", "1985" }, 0);
             pr[4] = new Preguntas("¿Cuál es la operación correcta?", new string[3] { "2 + 2 = Pez", "5 x 5 = 120", "Raíz de 144 = 12" }, 2);
+            pr[5] = new Preguntas("¿Qué personaje de Marvel es verde?", new string[3] { "Dr. Strange", "Hulk", "Capitán América" }, 1);
+            pr[6] = new Preguntas("¿Cuánto es 156/0?", new string[3] { "15.6", "156", "No existe" }, 2);
+            pr[7] = new Preguntas("¿Cuál es la calificación en rotten tomatoes de Avengers: Endgame?", new string[3] { "100", "20", "95" }, 2);
+            pr[8] = new Preguntas("¿Cuál es la película con más ventas en su primer fin de semana hasta el momento?", new string[3] { "Titanic", "Avatar", "Avengers: Endgame" }, 2);
+            pr[9] = new Preguntas("¿Qué es más fuerte el vibranium o el adamantium?", new string[3] { "Vibranium", "Adamantium", "¿Qué es eso?" }, 0);
+            pr[10] = new Preguntas("¿Quién de estos actores ha ganado un Oscar recientemente?", new string[3] { "Robert Downey Jr.", "Tom Hanks", "Leonardo DiCaprio" }, 2);
+            pr[11] = new Preguntas("¿Quién dibujó a Kate en la película del Titanic?", new string[3] { "Morgan Freeman", "Jack", "Jim Carrey" }, 1);
+            pr[12] = new Preguntas("¿Toy Story 2 casi fue eliminada?", new string[3] { "Si", "No", "What do you mean? Bruh" }, 0);
+            pr[13] = new Preguntas("¿Cómo se llama la mamá de Nemo?", new string[3] { "Anémona anónima", "Coral", "Billy" }, 1);
+            pr[14] = new Preguntas("¿En cuál de las siguientes películas aparece Robert Downey Jr?", new string[3] { "Lilo & Stitch", "Iron Man", "Alice in Wonderland" }, 1);
 
             Random numpregunta = new Random();
-            int num = numpregunta.Next(0, 5);
+            int num = numpregunta.Next(0, 15);
 
             this.panelPreguntas1.AsignarPregunta(pr[num]);
         }
